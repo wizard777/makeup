@@ -1,0 +1,13 @@
+
+
+
+
+<div *ngIf="loading">loading...Please wait</div>
+<div *ngIf="errorMessage">
+    <strong>Warning!</strong> {{errorMessage | json}}
+</div>
+
+
+<div *ngFor="let product of makeup">
+    {{product.id}}
+</div>
