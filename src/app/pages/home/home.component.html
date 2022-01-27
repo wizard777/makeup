@@ -8,6 +8,7 @@
 </div>
 
 
-<div *ngFor="let product of makeup">
-    {{product.id}}
-</div>
+<app-makeup-card *ngFor="let makeup of makeup"  [makeupI] = "makeup"
+ class="makeup-card">
+    
+</app-makeup-card>

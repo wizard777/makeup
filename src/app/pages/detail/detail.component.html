@@ -1,0 +1,56 @@
+<div *ngIf="makeup$ | async; let makeup" class="makeup">
+    <button [routerLink]="'/'" class="button shadow">
+        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
+        Back
+    </button>
+
+    <div class="makeup-layout">
+        <img [src]="makeup.image_link">
+
+        <div class="makeup-detail">
+            <h3> {{makeup.name}}</h3>
+            <div class="makeup-info">
+                <div class="makeup-section">
+                    <p><strong>Brand: </strong>
+                        {{makeup.brand}}
+                    </p>
+
+                    <p><strong>Tag list: </strong>
+                        {{ makeup.tag_list }}</p>
+
+                </div>
+                <div class="makeup-section">
+                    <p><strong>Price: </strong>
+                        {{ makeup.price }} {{ makeup.price_sign }} 
+                        {{ makeup.currency }}</p>
+
+                    <p><strong>Category: </strong>
+                        {{ makeup.category }}</p>
+
+                    <p><strong>Product type: </strong>
+                        {{ makeup.product_type }}</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="makeup-description">
+            <p><strong>Description: </strong>
+                {{ makeup.description }}</p>
+
+            <p><strong>Product colors: </strong>
+                <span>
+                    {{ getMakeupColorName(makeup.product_colors) }} </span>{{' '}}&nbsp;</p>
+
+            <p [ngStyle]="{'background-color': '{{ getProductColorsHex(movie.product_colors) }}'}">
+                <strong>hex</strong>
+                {{ getMakeupHex(makeup.product_colors) }}</p>
+
+        </div>
+    </div>
+
+
+
+
+</div>

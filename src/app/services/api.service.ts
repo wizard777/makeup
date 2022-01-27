@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { IMakeup } from '../interface/i-makeup';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +14,10 @@ export class ApiService {
 
   getMakeup() {
     return this._http.get<IMakeup[]>(`${this.apiUrl}.json`)
+  }
+
+  getMakeupId(id: number) {
+      return this._http.get<IMakeup>(`${this.apiUrl}/${id}.json`)
+      .pipe( map( data => data ))
   }
 }
