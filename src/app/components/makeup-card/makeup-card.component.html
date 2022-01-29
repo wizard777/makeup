@@ -1,10 +1,10 @@
-<div *ngIf="makeupI" [routerLink]="'/' + makeupI.id"  class="makeup-card">
+<div *ngIf="makeupI" [routerLink]="'/' + makeupI.id"  class="makeup-card shadow">
     <div class="makeup-card-img">
-        <img [src]="makeupI.image_link">
+        <img [src]="makeupI.image_link" onerror="this.onerror=null; this.src='../../../assets/not-to-take-pictures-card.png' ">
     </div>
 
     <div class="makeup-card-info">
-        <h3>{{makeupI.name}}</h3>
+        <h2>{{makeupI.name}}</h2>
         <p><strong>Brand: </strong>
             {{makeupI.brand}}</p>
         <p><strong>Category: </strong>

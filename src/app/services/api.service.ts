@@ -20,4 +20,6 @@ export class ApiService {
       return this._http.get<IMakeup>(`${this.apiUrl}/${id}.json`)
       .pipe( map( data => data ))
   }
+
+  
 }

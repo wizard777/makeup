@@ -1,14 +1,15 @@
 
 
 
-
-<div *ngIf="loading">loading...Please wait</div>
-<div *ngIf="errorMessage">
-    <strong>Warning!</strong> {{errorMessage | json}}
+<div class="loader">
+    <div *ngIf="loading">loading...Please wait</div>
+    <div *ngIf="errorMessage">
+        <strong>Warning!</strong> {{errorMessage | json}}
+    </div>
 </div>
 
+<div class="makeup-card">
+    <app-makeup-card *ngFor="let makeup of makeup" [makeupI]="makeup">
+   </app-makeup-card>
+</div>
 
-<app-makeup-card *ngFor="let makeup of makeup"  [makeupI] = "makeup"
- class="makeup-card">
-    
-</app-makeup-card>

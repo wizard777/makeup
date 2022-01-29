@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
+import { tap, map, mergeMap } from 'rxjs/operators';
 import { IMakeup, ProductColor } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -13,15 +13,27 @@ import { ApiService } from 'src/app/services/api.service';
 export class DetailComponent implements OnInit {
 
   makeup$ : Observable<IMakeup>
+  hex: IMakeup[];
 
   constructor( private _api: ApiService, private _activatedRouted: ActivatedRoute) { }
 
   ngOnInit(): void {
     this._activatedRouted.paramMap.subscribe( param => {
-      console.log(param, 'param Id')
+     // console.log(param, 'param Id')
       this.makeup$ = this._api.getMakeupId( Number(param.get('id')) )
-      .pipe( tap ( res => console.log( res )))  
+    //  .pipe( tap ( res => console.log( res ))
+   //   .mergeMap( res => {
+// this.hex. = this._api.get
+     // })
+    
+   //   )  
     })
+
+     this._api.getMakeup().subscribe( res => {
+       this.hex = res
+        console.log(this.hex)
+     })
+
   }
 
 
