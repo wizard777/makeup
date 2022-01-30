@@ -3,7 +3,6 @@
   padding: 1.5rem;
   @media (min-width: 376px) {
     margin: 4rem;
-  
   }
 
   button {
@@ -13,7 +12,7 @@
     border: none;
     outline: none;
     &:hover {
-    background: darken(white, 3%);
+      background: darken(white, 3%);
     }
   }
 
@@ -31,6 +30,7 @@
   }
 
   &-layout {
+
     @media (min-width: 376px) {
       display: flex;
       justify-content: space-between;
@@ -41,51 +41,58 @@
     }
   }
   &-detail {
+
     @media (min-width: 376px) {
       width: 50%;
     }
   }
   &-info {
-    
+   
     @media (min-width: 376px) {
       display: flex;
       justify-content: space-between;
     }
   }
   &-section {
-
-    padding: 1rem 0;
+    padding:  0;
     width: 50%;
+    @media(min-width: 376px) {
+     margin: 1.2rem 0;
+    }
   }
 
   &-description {
-   
-    padding-top: 2rem;
+    padding-top: 1rem;
+    @media(min-width: 376px) {
+      margin-top: 1.2rem;
+    }
   }
 }
 
 .product-colors {
-  margin: 0 1rem ;
+  margin: 0 1rem;
   color: white;
   text-align: center;
   font-size: 0.8rem;
+  &-hex {
 
-  @media (min-width: 376px) {
-   
-    &-hex {
+    @media (min-width: 376px) {
       display: grid;
       column-gap: 1rem;
-      row-gap: 1rem;
+      row-gap: 0.5rem;
       grid-template-columns: repeat(6, 1fr);
     }
-    .button {
-      
-      @media (min-width: 376px) {
-        font-size: 0.6rem;
-        padding: 0.5rem 0;
-        text-align: center;
-        color: white;
-      }
+  }
+
+  .button {
+    margin: 0.2rem 0;
+    padding: 0.3rem 0;
+    font-size: 0.7rem;
+    @media (min-width: 376px) {
+      margin: 0.2rem 0;
+      padding: 0.3rem 0;
+      text-align: center;
+      color: white;
     }
   }
 }

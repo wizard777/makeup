@@ -1,3 +1,11 @@
+<div class="makeup-filters">
+    <div class="search-filter shadow">
+        <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
+    </div>
+    <app-optional-filter placeholder="Filter by category" [options]="categoryOptions" [(value)]="categoryFilter">
+    </app-optional-filter>
+</div>
+
 
 
 
@@ -8,8 +16,8 @@
     </div>
 </div>
 
-<div class="makeup-card">
-    <app-makeup-card *ngFor="let makeup of makeup" [makeupI]="makeup">
-   </app-makeup-card>
-</div>
 
+<div class="makeup-card">
+    <app-makeup-card *ngFor="let makeup of products" [makeupI]="makeup">
+    </app-makeup-card>
+</div>

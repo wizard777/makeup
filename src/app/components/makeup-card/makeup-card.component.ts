@@ -15,4 +15,6 @@ export class MakeupCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ 
+
 }

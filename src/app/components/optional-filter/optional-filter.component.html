@@ -1,0 +1,14 @@
+
+
+<div class="optional-filter shadow"> 
+    <div class="optional-filter-label" (click) = "toggleCategory()">
+        <span> {{ placeholder }} </span>
+        
+           <i class="fa fa-angle-down" aria-hidden="true"></i> 
+        
+      
+    </div>
+    <ul  *ngIf="showCategory" class="optional-filter-options shadow" >
+        <li *ngFor="let option of options" (click) = "select(option)" >{{ option }}</li>
+    </ul>
+</div>

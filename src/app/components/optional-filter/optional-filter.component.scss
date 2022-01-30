@@ -1,0 +1,41 @@
+
+
+
+.optional-filter {
+  cursor: pointer;
+  position: relative;
+  margin-top: 1rem;
+  padding: 0.7rem;
+
+  @media (min-width: 376px) {
+    margin-top: 0;
+  }
+
+  &-label {
+    display: flex;
+    justify-content: space-between;
+    i{
+      font-size: 1.3rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &-options {
+    width: 100%;
+    position: absolute;
+    list-style: none;
+    z-index: 5;
+    top: 110%;
+    left: 0;
+
+    li {
+      //margin: 0.25rem;
+      padding: 0.2rem 1rem;
+      background-color: rgb(245, 245, 245);
+      cursor: pointer;
+      &:hover {
+        background-color: white;
+      }
+    }
+  }
+}
