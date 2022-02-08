@@ -10,6 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { MakeupCardComponent } from './components/makeup-card/makeup-card.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { OptionalFilterComponent } from './components/optional-filter/optional-filter.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
+import { NgxPaginationModule }  from  'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,17 @@ import { OptionalFilterComponent } from './components/optional-filter/optional-f
     HomeComponent,
     MakeupCardComponent,
     DetailComponent,
-    OptionalFilterComponent
+    OptionalFilterComponent,
+    FooterComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

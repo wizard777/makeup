@@ -10,9 +10,14 @@ export class MakeupCardComponent implements OnInit {
 
   @Input() makeupI: IMakeup;
 
+
+  
+
   constructor() { }
 
   ngOnInit(): void {
+
+  
   }
 
  

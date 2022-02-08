@@ -1,23 +1,31 @@
-<div class="makeup-filters">
-    <div class="search-filter shadow">
-        <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
+
+
+
+ <div class="container"> 
+
+    <div class="makeup-filters">
+        <div class="search-filter shadow">
+            <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
+        </div>
+        <app-optional-filter placeholder="Filter by category" [options]="categoryOptions" [(value)]="categoryFilter">
+        </app-optional-filter>
     </div>
-    <app-optional-filter placeholder="Filter by category" [options]="categoryOptions" [(value)]="categoryFilter">
-    </app-optional-filter>
-</div>
 
-
-
-
-<div class="loader">
-    <div *ngIf="loading">loading...Please wait</div>
-    <div *ngIf="errorMessage">
-        <strong>Warning!</strong> {{errorMessage | json}}
+    <div class="loader">
+        <p *ngIf="loading"><strong>loading...Please wait</strong></p>
+        <div *ngIf="errorMessage">
+            <strong>Warning!</strong> {{errorMessage | json}}
+        </div>
     </div>
-</div>
 
+    <div class="makeup-card">
+        <app-makeup-card *ngFor="let makeup of products |
+         paginate: { itemsPerPage: 16, currentPage: page, totalItems: totalLength }" 
+        [makeupI]="makeup">
+        </app-makeup-card>
+    </div> 
 
-<div class="makeup-card">
-    <app-makeup-card *ngFor="let makeup of products" [makeupI]="makeup">
-    </app-makeup-card>
-</div>
+    <pagination-controls  class="my-pagination" *ngIf="!loading"
+     (pageChange) = " page  = $event " ></pagination-controls>
+
+ </div> 

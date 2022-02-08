@@ -12,7 +12,7 @@ export interface IMakeup {
     rating: null;
     category: string;
     product_type: string;
-    tag_list: string[];
+    tag_list?: string[];
     created_at: Date;
     updated_at: Date;
     product_api_url: string;

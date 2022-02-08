@@ -18,6 +18,9 @@ export class HomeComponent implements OnInit {
   categoryFilter?: string;
   categoryOptions = CATEGORY_OPTIONS;
 
+  page: number = 1;
+  totalLength: number;
+
   constructor(private _api: ApiService) { }
 
 
@@ -29,6 +32,10 @@ export class HomeComponent implements OnInit {
     this._api.getMakeup().subscribe(response => {
       console.log('response received')
       this.makeupData = response;
+
+      this.totalLength = response.length;
+  
+
     },
       (error) => {                              //error() callback
         console.error('Request failed with error')
@@ -43,16 +50,21 @@ export class HomeComponent implements OnInit {
   }
 
   get products() {
-    return this.makeupData
-      ? this.makeupData.filter(makeup =>
-        this.search ?
-          makeup.name?.toLowerCase().includes(this.search)
+
+    return this.makeupData ? 
+    this.makeupData.
+      filter( makeup => this.search ?
+          makeup.name ?.toLowerCase().includes(this.search)
           : makeup
+
       )
+     
         // filter by  category
-        .filter(makeup => this.categoryFilter ? makeup.category?.includes(this.categoryFilter)
+        .filter( makeup => this.categoryFilter ?
+           makeup.category ?.includes(this.categoryFilter)
           : this.makeupData
-        )
+        )  
       : this.makeupData
   }
+  
 }

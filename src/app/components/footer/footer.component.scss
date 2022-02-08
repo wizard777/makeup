@@ -1,0 +1,37 @@
+@import "/src/styles.scss";
+
+
+
+.footer {
+  background-color: $color-primary;
+  font-size: $root_font_size;
+  color: $header_font_color;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media (min-width: 376px) {
+    padding: 2rem 3rem;
+  }
+
+  &-tag {
+    //padding: 0.05rem 0.25rem;
+
+    @media (min-width: 376px) {
+      padding: 0.4rem;
+    
+    }
+
+    p.capitalize {
+      text-transform: capitalize;
+    }
+  }
+
+  &-section {
+    
+    @media (min-width) {
+    }
+  }
+}
+
