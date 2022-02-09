@@ -20,12 +20,12 @@
 
     <div class="makeup-card">
         <app-makeup-card *ngFor="let makeup of products |
-         paginate: { itemsPerPage: 16, currentPage: page, totalItems: totalLength }" 
+         paginate: { itemsPerPage: 24, currentPage: page, totalItems: totalLength }" 
         [makeupI]="makeup">
         </app-makeup-card>
     </div> 
 
-    <pagination-controls  class="my-pagination" *ngIf="!loading"
-     (pageChange) = " page  = $event " ></pagination-controls>
+    <pagination-controls  class="my-pagination " *ngIf="!loading"
+     (pageChange) = "page = $event" ></pagination-controls>
 
  </div> 

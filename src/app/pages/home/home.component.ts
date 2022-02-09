@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   categoryOptions = CATEGORY_OPTIONS;
 
   page: number = 1;
-  totalLength: number;
+  totalLength: any;
 
   constructor(private _api: ApiService) { }
 
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
       console.log('response received')
       this.makeupData = response;
 
-      this.totalLength = response.length;
+      this.totalLength = this.makeupData.length;
   
 
     },
