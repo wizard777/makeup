@@ -1,29 +1,34 @@
-<div>
+<div *ngIf="makeupData ">
+    <footer class="footer">
 
+        <div class="footer-section left">
+            <div>
+                <h4>Makeup</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum expedita officiis officia maiores enim,
+                    consectetur dolorum architecto natus nesciunt
+                    distinctio ex deleniti molestiae .</p>
+            </div>
+
+
+        </div>
+
+        <div class="footer-section">
+            <h4> tag list </h4>
+            <div *ngFor="let tag of makeupData" class="footer-tag">
+                <p class="capitalize">
+                    {{ tag }}
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+    <aside class="footer-bottom">
+        <ul >
+            <li> <a href="#">HOME</a> </li>
+            <li> <a href="#">CONTACT</a></li>
+            <li> <a href="#">ADRESS</a></li>
+        </ul>
+    </aside>
 </div>
-
-<div *ngIf="makeupData " class="footer">
-    <h3> tag list </h3>
-
-    <div *ngFor="let tag of makeupData" class="footer-tag">
-        <p class="capitalize">
-            {{ tag }}
-        </p>
-    </div>
-    
-</div>
-
-<!-- <footer  class="proba">
-
-    <div class="proba-ta">
-        <p>divv11</p>
-    </div>
-    <div class="proba-ta">
-        <p>divv12</p>
-    </div>
-    <div class="proba-ta">
-        <p>divv12</p>
-    </div>
-
-
-</footer> -->

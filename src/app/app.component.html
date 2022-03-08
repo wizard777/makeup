@@ -1,12 +1,13 @@
-
-
-
-
-
 <app-navbar></app-navbar>
 
+<div style="grid-row: 1;">
+    <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
-
-
-<app-footer></app-footer>
+<app-footer style="
+bottom: 0;
+display: flex;
+grid-row: 2;
+height: 80px;
+position: absolute;
+width: 100%;"></app-footer>
