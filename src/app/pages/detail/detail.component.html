@@ -1,50 +1,56 @@
-
-
-<div *ngIf="makeup$ | async; let makeup" class="makeup" >
-    <button [routerLink]="'/'" >
+<div *ngIf="makeup$ | async; let makeup" class="makeup">
+    <button [routerLink]="'/'">
         <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> -->
         Back
     </button>
 
     <div class="makeup-layout">
-        <img [src]="makeup.image_link" 
-        onerror="this.onerror=null; this.src='assets/no-image-icon-23500.jpg' " >
+        <img [src]="makeup.image_link" onerror="this.onerror=null; this.src='assets/no-image-icon-23500.jpg' ">
 
         <div class="makeup-detail">
             <h3> {{makeup.name}}</h3>
             <div class="makeup-info">
-                <div class="makeup-section">
+
+                <section class="makeup-section">
                     <p><strong>Brand: </strong>
                         {{makeup.brand}}</p>
                     <p><strong>Comments: </strong>
                         {{ makeup.tag_list }}</p>
-                        <p><strong>Category: </strong>
-                            {{ makeup.category }}</p>
-                </div>
-                <div class="makeup-section">
+                    <p><strong>Category: </strong>
+                        {{ makeup.category }}</p>
+                </section>
+
+                <section class="makeup-section">
                     <p><strong>Price: </strong>
                         {{ makeup.currency }}
                         {{ makeup.price_sign }}
-                        {{ makeup.price }}  
+                        {{ makeup.price }}
                     </p>
                     <p><strong>Product type: </strong>
                         {{ makeup.product_type }}</p>
-                </div>
+                </section>
+
             </div>
-           <p><strong>Description: </strong>
-            {{ makeup.description }}</p>
+            <section>
+                <p><strong>Description: </strong>
+                    {{ makeup.description }}</p>
+            </section>
         </div>
     </div>
-    <div class="makeup-description">
-       <p>
-           <strong>Product colors: </strong>
-       </p> <br>
-        <div class="product-colors">     
-            <div class="product-colors-hex" >
-                <div *ngFor="let item of makeup.product_colors" [style.background]="item.hex_value" class="button">
+
+    <section class="product-colors-title">
+        <p >
+            <strong>Product colors: </strong>
+        </p>
+        <div class="product-colors">
+
+            <div class="product-colors-hex">
+
+                
+                <div *ngFor="let item of makeup.product_colors" [style.background]="item.hex_value" class="hex-mode">
                     {{ item.colour_name }}
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>

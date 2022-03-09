@@ -18,31 +18,22 @@ export class DetailComponent implements OnInit {
   constructor( private _api: ApiService, private _activatedRouted: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this._activatedRouted.paramMap.subscribe( param => {
-     // console.log(param, 'param Id')
-      this.makeup$ = this._api.getMakeupId( Number(param.get('id')) )
-    //  .pipe( tap ( res => console.log( res ))
-   //   .mergeMap( res => {
-// this.hex. = this._api.get
-     // })
-    
-   //   )  
+      this.makeup$ = this._api.getMakeupId( Number(param.get('id')) ) 
     })
 
      this._api.getMakeup().subscribe( res => {
        this.hex = res
-        console.log(this.hex)
+      //  console.log(this.hex)
      })
-
   }
 
+  // getMakeupColorName( color: ProductColor[] ) {
+  //   return color.map( res => res.colour_name )
+  // }
 
-  getMakeupColorName( color: ProductColor[] ) {
-    return color.map( res => res.colour_name ).join(', ')
-  }
-
-
-  getMakeupHex( color: ProductColor[] ) {
-    return color.map( res => res.hex_value).join(', ')
-  }
+  // getMakeupHex( color: ProductColor[] ) {
+  //   return color.map( res => res.hex_value)
+  // }
 }
