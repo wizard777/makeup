@@ -1,20 +1,19 @@
+<section>
+    <div *ngIf="makeupI" [routerLink]="'/' + makeupI.id" class="makeup-card ">
+        <div class="makeup-card-img">
+            <img [src]="makeupI.image_link" onerror="this.onerror=null; this.src='assets/no-image-icon-23500.jpg' ">
+        </div>
 
+        <div class="makeup-card-info">
+            <h4>{{ name }} </h4>
+            <p><strong>Brand: </strong>
+                {{ makeupI.brand }}</p>
+            <p><strong>Category: </strong>
+                {{ makeupI.category }}</p>
+            <p><strong>Product type: </strong>
+                {{ makeupI.product_type }}</p>
+        </div>
 
-
-<div *ngIf="makeupI" [routerLink]="'/' + makeupI.id"  class="makeup-card shadow">
-    <div class="makeup-card-img">
-        <img [src]="makeupI.image_link" 
-        onerror="this.onerror=null; this.src='assets/no-image-icon-23500.jpg' ">
     </div>
 
-    <div class="makeup-card-info">
-        <h4>{{ makeupI.name }} </h4>
-        <p><strong>Brand: </strong>
-            {{ makeupI.brand }}</p>
-        <p><strong>Category: </strong>
-            {{ makeupI.category }}</p>
-        <p><strong>Product type: </strong>
-            {{ makeupI.product_type }}</p>
-    </div>
-
-</div>
+</section>

@@ -1,24 +1,26 @@
 
 
 
+@import "/src/styles.scss";
+
 .optional-filter {
   cursor: pointer;
   position: relative;
   //margin-top: 1rem;
   padding: 0.7rem;
+  border: solid 0.1rem $color-primary;
 
   @media (min-width: 376px) {
-    
   }
 
   &-label {
     display: flex;
     justify-content: space-between;
-    span{
+    span {
       font-size: 1.1rem;
       //padding: .8rem;
     }
-    i{
+    i {
       font-size: 1.2rem;
       padding-right: 1rem;
       padding-top: 0.4rem;
@@ -36,10 +38,12 @@
     li {
       //margin: 0.25rem;
       padding: 0.2rem 1rem;
-      background-color: rgb(245, 245, 245);
+      background-color: white;
+      // color: $header_font_color;
       cursor: pointer;
+      text-transform: capitalize;
       &:hover {
-        background-color: white;
+        background-color: lighten($color-primary, 20%);
       }
     }
   }

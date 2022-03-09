@@ -15,18 +15,21 @@ nav {
   a {
     text-decoration: none;
   }
-  h3 {
-    font-size: 1.5rem;
-    background-color: $color-primary;
-    color: $header_font_color;
-    text-align: center;
 
-    @media(min-width: 376px) {
-      font-size: 2rem;
-      align-items: center;
-     padding: 0.4rem 2.5rem;
+    h3 {
+      font-size: 1.5rem;
+      background-color: $color-primary;
+      color: $header_font_color;
+      text-align: center;
+
+      @media (min-width: 376px) {
+        font-size: 1.75rem;
+        align-items: center;
+        padding: 1rem 3.5rem;
+        font-weight: bold;
+      }
     }
-  }
+  
 
   .navbar {
     font-size: 1rem;
@@ -42,14 +45,13 @@ nav {
 
     &:hover {
       color: $header_font_color;
-      background-color: $color-primary;
+      background-color: lighten($color-primary, 5%);
       // background: rgba(102,177,241,0.8);
       transition: all 0.5s ease;
     }
     @media (min-width: 376px) {
-    display: flex;
-    font-size: 1.1rem;
-      
+      display: flex;
+      font-size: 1.1rem;
     }
   }
 }

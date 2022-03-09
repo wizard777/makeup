@@ -25,16 +25,14 @@ export class OptionalFilterComponent implements OnInit {
 
     if (category) {
       this.showCategory = false;
-      this.placeholder = category.replace('_', ' ');
+      this.placeholder = category.replace("_"," ").charAt(0).toUpperCase() + category.slice(1);
       
     } else {
       this.showCategory = true;
     }
-
   }
 
   toggleCategory() {
     this.showCategory = !this.showCategory;
   }
-
 }

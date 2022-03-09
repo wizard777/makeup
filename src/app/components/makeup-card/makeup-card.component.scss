@@ -5,13 +5,22 @@
   overflow: hidden;
   font-size: 1.5rem;
   cursor: pointer;
-  height: 470px;
+  height: 450px;
+  transition : 0.7s ease-out;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transform: scale(1.04);
+    transition: transform 0.7s;
+
+  }
+
 
   @media (min-width: 376px) {
   }
 
   h4 {
-    font-weight: 400;
+    
   }
 
   p {
@@ -24,11 +33,12 @@
   }
 
   &-img {
-    height: 260px;
+    text-align: center;
+    height: 250px;
     overflow: hidden;
 
     img {
-      width: 100%;
+    max-width: 100%;
       height: 100%;
     }
   }

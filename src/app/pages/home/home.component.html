@@ -1,10 +1,12 @@
 
 
 
- <div class="container"> 
+
+
+ <section  > 
 
     <div class="makeup-filters">
-        <div class="search-filter shadow">
+        <div class="search-filter ">
             <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
         </div>
         <app-optional-filter placeholder="Filter by category" [options]="categoryOptions" [(value)]="categoryFilter">
@@ -20,12 +22,22 @@
 
     <div class="makeup-card">
         <app-makeup-card *ngFor="let makeup of products |
-         paginate: { itemsPerPage: 24, currentPage: page, totalItems: totalLength }" 
+         paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalLength }" 
         [makeupI]="makeup">
         </app-makeup-card>
     </div> 
 
+    
+
     <pagination-controls  class="my-pagination " *ngIf="!loading"
      (pageChange) = "page = $event" ></pagination-controls>
 
- </div> 
+
+     <div *ngIf="!loading" class="angle-double">
+        <a [routerLink] = ""  (click)="animateToTop($event)"  >
+            <i class="fa fa-angle-double-up" aria-hidden="true" ></i>
+        </a>
+     </div>
+ </section> 
+
+ 
