@@ -1,17 +1,11 @@
 @import "/src/styles.scss";
 
 .makeup {
-  //min-width: 800px;
-  // min-height: 600px;
-  // border: solid 1px black;
-
-
   margin: 1rem;
   padding: 1rem;
   font-size: $root_font_size;
 
   @media (min-width: 376px) {
-   
     font-size: 1.1rem;
     margin: 4rem;
   }
@@ -22,7 +16,8 @@
     cursor: pointer;
     border: none;
     outline: none;
-    border: solid 0.1rem $color-primary;
+    border: solid 0.05rem $color-primary;
+  
     background-color: white;
     border-radius: 0.2rem;
     &:hover {
