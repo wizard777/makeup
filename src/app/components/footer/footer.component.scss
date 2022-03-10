@@ -3,10 +3,8 @@
 .footer {
   background-color: lighten($color-primary, 5%);
   font-size: $root_font_size;
-  color: $header_font_color;
+  color: black;
   display: flex;
-
-  
 
   @media (min-width: 376px) {
     display: flex;
@@ -16,7 +14,6 @@
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
-
     width: 50%;
 
     @media (min-width: 376px) {
@@ -40,17 +37,13 @@
 }
 
 ul {
-  
-
   li {
-
     font-weight: bold;
     list-style: none;
     padding: 1.5rem 4rem;
-
     font-size: 1.1rem;
     a {
-      color: rgb(255, 255, 255);
+      color: white;
     }
   }
 }
@@ -64,17 +57,17 @@ ul {
     justify-content: space-between;
     width: 80%;
     margin: 0 auto;
-    
+
     @media (min-width: 376px) {
       width: 25%;
       margin-left: 3rem;
     }
   }
-  
+
   li {
     font-size: 0.8rem;
     padding: 0.5rem 1rem;
-    
+
     @media (min-width: 376px) {
       font-size: 1rem;
       padding: 1rem 0;
@@ -86,9 +79,8 @@ ul {
       &:hover {
         border-bottom: solid 2px white;
       }
-    @media (min-width: 376px) {
-       
+      @media (min-width: 376px) {
+      }
     }
-  } 
   }
 }

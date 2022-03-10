@@ -29,9 +29,8 @@ section {
     display: flex;
     flex-direction: column;
    
-
     @media (min-width: 376px) {
-      margin: 2rem;
+      margin: 2rem 4rem;
       flex-direction: row;
       justify-content: space-between;
     }
@@ -39,18 +38,15 @@ section {
 
   .search-filter {
     margin-bottom: 1rem;
-    border-bottom: solid 0.1rem $color-primary;
+    border: solid 0.1rem $color-primary;
 
     @media (min-width: 376px) {
       width: 20%;
       margin-bottom: 0;
     }
 
-  
     input {
-      padding-top: 1.2rem;
-      padding-left: 1.4rem;
-      padding-bottom: 0.5rem;
+      padding: 0.6rem 0 0.6rem 1.4rem;
       font-size: 0.9rem;
       border: none;
       outline: none;
@@ -59,7 +55,7 @@ section {
       @media (min-width: 376px) {
         font-size: 1rem;
       }
-      
+  
     }
   }
   app-optional-filter {
@@ -93,7 +89,5 @@ section {
         font-size: 3rem;
       }
     }
-
-    
   }
 }
