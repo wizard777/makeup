@@ -11,7 +11,6 @@ import { MakeupCardComponent } from './components/makeup-card/makeup-card.compon
 import { DetailComponent } from './pages/detail/detail.component';
 import { OptionalFilterComponent } from './components/optional-filter/optional-filter.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { NgxPaginationModule }  from  'ngx-pagination';
 
 @NgModule({
@@ -22,8 +21,8 @@ import { NgxPaginationModule }  from  'ngx-pagination';
     MakeupCardComponent,
     DetailComponent,
     OptionalFilterComponent,
-    FooterComponent,
-    PaginationComponent
+    FooterComponent
+  
   ],
   imports: [
     BrowserModule,
