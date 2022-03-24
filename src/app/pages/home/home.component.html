@@ -1,43 +1,29 @@
-
-
-
-
-
- <section  > 
+<section>
 
     <div class="makeup-filters">
         <div class="search-filter ">
-            <input type="text" placeholder="Search for a name..." [(ngModel)]="search" >
+            <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
         </div>
+
         <app-optional-filter placeholder="Filter by category" [options]="categoryOptions" [(value)]="categoryFilter">
         </app-optional-filter>
     </div>
 
     <div class="loader">
-        <p *ngIf="loading"><strong>loading...Please wait</strong></p>
+        <p *ngIf="loading"><strong>loading ...Please wait</strong></p>
         <div *ngIf="errorMessage">
             <strong>Warning!</strong> {{errorMessage | json}}
         </div>
     </div>
 
     <div class="makeup-card">
-        <app-makeup-card *ngFor="let makeup of products |
-         paginate: { itemsPerPage: 12, currentPage: page, totalItems: totalLength }" 
-        [makeupI]="makeup">
+        <app-makeup-card *ngFor="let makeup of products" [makeupI]="makeup">
         </app-makeup-card>
-    </div> 
+    </div>
 
-    
-
-    <pagination-controls  class="my-pagination " *ngIf="!loading"
-     (pageChange) = "page = $event" ></pagination-controls>
-
-
-     <div *ngIf="!loading" class="angle-double">
-        <a [routerLink] = ""  (click)="animateToTop($event)"  >
-            <i class="fa fa-angle-double-up" aria-hidden="true" ></i>
+    <div *ngIf="!loading" class="angle-double">
+        <a [routerLink]="" (click)="animateToTop($event)">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
         </a>
-     </div>
- </section> 
-
- 
+    </div>
+</section>

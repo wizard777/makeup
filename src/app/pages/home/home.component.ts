@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { filter } from 'rxjs/operators';
+import { filter, map, take, takeUntil } from 'rxjs/operators';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -17,37 +17,37 @@ export class HomeComponent implements OnInit {
   loading: boolean;
   errorMessage = "";
   search: string;
-  categoryFilter?: string;
+  categoryFilter: string;
   categoryOptions = CATEGORY_OPTIONS;
 
-  page: number = 1;
-  totalLength: any;
-
-  
 
   constructor(private _api: ApiService) { }
 
   ngOnInit(): void {
-    
+
 
     this.loading = true;
 
-    this._api.getMakeup().subscribe(response => {
-      // console.log('response received')
-      this.makeupData = response;
-      this.totalLength = this.makeupData.length;
+    this._api.getMakeup().pipe(
 
-    },
-      (error) => {                              //error() callback
-        // console.error('Request failed with error')
-        this.errorMessage = error;
-        this.loading = false;
-      },
-      () => {                                   //complete() callback
-        //  console.error('Request completed')      //This is actually not needed 
-        this.loading = false;
-      }
     )
+
+      .subscribe(response => {
+        // console.log('response received')
+        this.makeupData = response;
+        console.log(this.makeupData)
+
+      },
+        (error) => {
+          // console.error('Request failed with error')
+          this.errorMessage = error;
+          this.loading = false;
+        },
+        () => {
+          //  console.error('Request completed')      
+          this.loading = false;
+        }
+      )
   }
 
   get products() {
@@ -63,7 +63,8 @@ export class HomeComponent implements OnInit {
           makeup.category?.includes(this.categoryFilter)
           : this.makeupData
         )
-      : this.makeupData
+
+      : this.makeupData;
   }
 
   animateToTop(e) {
@@ -78,5 +79,4 @@ export class HomeComponent implements OnInit {
     }, 16);
   }
 
- 
 }

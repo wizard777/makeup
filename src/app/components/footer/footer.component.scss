@@ -3,7 +3,7 @@
 .footer {
   background-color: lighten($color-primary, 5%);
   font-size: $root_font_size;
-  color: black;
+  color: white;
   display: flex;
 
   @media (min-width: 376px) {

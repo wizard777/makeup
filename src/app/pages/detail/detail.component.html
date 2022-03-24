@@ -5,8 +5,9 @@
     </button>
 
     <div class="makeup-layout">
-        <img [src]="makeup.image_link" onerror="this.onerror=null; this.src='assets/no-image-icon-23500.jpg' ">
-
+       
+            <img [src]="makeup.image_link" onerror="this.onerror=null; this.src='assets/no-image-icon-23500.jpg' ">
+   
         <div class="makeup-detail">
             <h3> {{makeup.name}}</h3>
             <div class="makeup-info">
@@ -39,14 +40,12 @@
     </div>
 
     <section class="product-colors-title">
-        <p >
+        <p>
             <strong>Product colors: </strong>
         </p>
         <div class="product-colors">
 
             <div class="product-colors-hex">
-
-                
                 <div *ngFor="let item of makeup.product_colors" [style.background]="item.hex_value" class="hex-mode">
                     {{ item.colour_name }}
                 </div>

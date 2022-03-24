@@ -12,20 +12,15 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transform: scale(1.04);
     transition: transform 0.7s;
-
   }
-
 
   @media (min-width: 376px) {
-  }
-
-  h4 {
-    
   }
 
   p {
     font-size: $root_font_size;
     padding: 0.25rem 0;
+    text-transform: capitalize;
   }
 
   &-info {

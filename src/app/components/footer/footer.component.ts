@@ -24,7 +24,7 @@ export class FooterComponent implements OnInit {
     this._api.getMakeup()
       .pipe(
         map(response => { return response.map(item => (item.tag_list)) }),
-        tap(el => console.log(el)),
+      //  tap(el => console.log(el)),
         map(res => Array.from(new Set([].concat(...res)))),
       )
       .subscribe(res => {
