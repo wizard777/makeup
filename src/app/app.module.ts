@@ -12,6 +12,7 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { OptionalFilterComponent } from './components/optional-filter/optional-filter.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NgxPaginationModule }  from  'ngx-pagination';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgxPaginationModule }  from  'ngx-pagination';
     MakeupCardComponent,
     DetailComponent,
     OptionalFilterComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent
   
   ],
   imports: [

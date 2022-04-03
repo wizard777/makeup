@@ -10,7 +10,10 @@
     </div>
 
     <div class="loader">
-        <p *ngIf="loading"><strong>loading ...Please wait</strong></p>
+        <div *ngIf="loading">
+            <img src="assets/loader.gif" width="65px" ><br>
+             <strong>loading ...Please wait</strong> 
+        </div>
         <div *ngIf="errorMessage">
             <strong>Warning!</strong> {{errorMessage | json}}
         </div>
