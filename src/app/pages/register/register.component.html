@@ -1,1 +1,80 @@
-<p>register works!</p>
+<h4 class="text-center ">Register</h4>
+
+<div class="d-flex justify-content-center">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit() " novalidate>
+
+        <div class="form-group col-12 ">
+            <label for="username" class="col-sm-4 col-form-label ">Username</label>
+            <input type="text" id="username" class="form-control "
+                [class.is-invalid]="username.invalid && username.touched" formControlName="username">
+            <div *ngIf="(username.touched && username.invalid) || username.dirty" class="text-danger">
+                <small *ngIf="username.errors?.required">Username is required.<br></small>
+                <small *ngIf="username.errors?.minlength">Username should be minimum
+                    {{ username.errors.minlength.requiredLength}} characters. <br></small>
+                <small *ngIf="username.errors?.maxlength">Username should be maximum
+                    {{ username.errors.maxlength.requiredLength}} characters.<br></small>
+                <small *ngIf="username.errors?.cannotContainsSpace">Username cannot contain space.</small>
+            </div>
+        </div>
+
+        <div class="form-group col-12">
+            <label for="password" class="col-sm-4  col-form-label ">Password</label>
+            <input type="password" id="password" class="form-control "
+                [class.is-invalid]="password.invalid && password.touched" formControlName="password">
+            <div *ngIf="(password.touched && password.invalid) || password.dirty" class="text-danger">
+                <small *ngIf="password.errors?.required">Password is required.<br></small>
+                <small *ngIf="password.errors?.hasUpper">Password should be 1 upper letter.<br></small>
+                <small *ngIf="password.errors?.minlength">Password should be minimum
+                    {{ password.errors.minlength.requiredLength}} characters.<br></small>
+                <small *ngIf="password.errors?.hasNumber">Password should be minimum 1 number.<br></small>
+            </div>
+        </div>
+
+        <div class="form-group col-12">
+            <label for="confirmPassword" class="col-sm-10 col-form-label ">Confirm password</label>
+            <input type="password" id="confirmPassword" class="form-control "
+                [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"
+                formControlName="confirmPassword">
+            <div *ngIf="(confirmPassword.touched && confirmPassword.invalid) || confirmPassword.dirty"
+                class="text-danger">
+                <small *ngIf="confirmPassword.errors?.required">Confirm password is required. <br></small>
+                <small *ngIf="confirmPassword.errors?.mustMatch">Password and confirm not match<br>
+                </small>
+            </div>
+        </div>
+
+        <div class="form-group col-12">
+            <label class="col-sm-4  col-form-label ">Phone</label>
+            <input formControlName="phone" class="form-control " [class.is-invalid]="phone.invalid && phone.touched" />
+            <div *ngIf="(phone.touched && phone.errors) || phone.dirty" class="text-danger">
+                <small *ngIf="phone.errors?.required">Phone is required. <br></small>
+                <small *ngIf="phone.errors?.onlyNumber">Phone must be a only integer numbers.</small>
+            </div>
+        </div>
+
+        <div class="form-group col-12">
+            <label class="col-sm-4  col-form-label ">Email</label>
+            <input type="text" formControlName="email" class="form-control "
+                [class.is-invalid]="email.invalid && email.touched" />
+            <div *ngIf="(email.touched && email.errors) || email.dirty" class="text-danger">
+                <small *ngIf="email.errors?.required">Email is required. <br></small>
+                <small *ngIf="email.errors?.email">Email must be a valid email address.</small>
+            </div>
+        </div>
+
+        <div class="text-left">
+            <button class="btn-sm btn-primary ml-5 mt-4 mb-5" type="submit" [disabled]=!userForm.valid> Submit</button>
+            <button value="Reset" class="btn-sm btn-primary ml-5 mt-4 mb-5" (click)="onReset()">Reset</button>
+        </div>
+    </form>
+</div>
+
+<br>
+
+<div style="text-align: center; width: 100%;">
+     <div>userForm.valid =   <b>{{userForm.valid }}</b> </div>
+    <div>userForm.invalid= <b>{{userForm.invalid }}</b> </div>
+    <div>userForm.status = <b>{{userForm.status }}</b> </div>
+
+</div>
+   

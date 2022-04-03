@@ -1,0 +1,30 @@
+@import "/src/styles.scss";
+    
+      .form-group {
+          margin-bottom: 20px;
+      }
+
+      button {
+        padding: 0.4rem 2rem;
+        margin-bottom: 4rem;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        border: solid 0.05rem $color-primary;
+      
+        background-color: $color-primary;
+        border-radius: 0.2rem;
+        &:hover {
+          background: lighten($color-primary, 7%);
+          color: white;
+        }
+      
+      }
+
+      button:disabled {
+        background: lighten($color-primary, 12%);
+        cursor: no-drop ;
+      }
+    
+
+
