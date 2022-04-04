@@ -14,22 +14,16 @@ nav {
 
   a {
     text-decoration: none;
-  }
-
-    h3 {
-      font-size: 1.5rem;
+    &:first-child {
       background-color: $color-primary;
       color: $header_font_color;
-      text-align: center;
-
-      @media (min-width: 376px) {
-        font-size: 1.75rem;
-        align-items: center;
-        padding: 1rem 3.5rem;
-        font-weight: bold;
-      }
     }
-  
+  }
+
+  header{
+    font-size: 1.5rem;
+    
+  }
 
   .navbar {
     font-size: 1rem;

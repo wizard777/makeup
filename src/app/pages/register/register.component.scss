@@ -1,7 +1,12 @@
 @import "/src/styles.scss";
     
+h4 {
+    margin-bottom: 20px;
+}
       .form-group {
+          width: 500px;
           margin-bottom: 20px;
+         
       }
 
       button {
@@ -23,6 +28,7 @@
 
       button:disabled {
         background: lighten($color-primary, 12%);
+        border: solid 0.05rem $color-primary;
         cursor: no-drop ;
       }
     

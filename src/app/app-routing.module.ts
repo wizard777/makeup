@@ -5,10 +5,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
-  { path:'', component:HomeComponent },
-  { path: 'reg', component: RegisterComponent },
-  { path: ':id', component: DetailComponent }
   
+  { path: '', component: HomeComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: ':id', component: DetailComponent },
+
 ];
 
 @NgModule({
