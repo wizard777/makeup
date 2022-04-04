@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div style="grid-row: 1;">
-    <router-outlet></router-outlet>
+    <router-outlet (activate)="onActivate($event)"></router-outlet>
 </div>
 
 <app-footer style="
