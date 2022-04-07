@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { RegisterComponent } from './pages/register/register.component';
     DetailComponent,
     OptionalFilterComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+  
   
   
   ],
