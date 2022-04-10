@@ -11,4 +11,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Makeup, Contact
 ## Free API
 931 products
-No pagination, long loading...
+
+Client Side Pagination
