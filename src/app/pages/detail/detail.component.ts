@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { tap, map, mergeMap } from 'rxjs/operators';
-import { IMakeup, ProductColor } from 'src/app/interface/i-makeup';
+import { IMakeup} from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -29,11 +28,4 @@ export class DetailComponent implements OnInit {
      })
   }
 
-  // getMakeupColorName( color: ProductColor[] ) {
-  //   return color.map( res => res.colour_name )
-  // }
-
-  // getMakeupHex( color: ProductColor[] ) {
-  //   return color.map( res => res.hex_value)
-  // }
 }

@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 
+import { NgxPaginationModule }  from  'ngx-pagination';
+
+
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { RegisterComponent } from './pages/register/register.component';
     OptionalFilterComponent,
     FooterComponent,
     RegisterComponent,
+   
   
   
   
@@ -35,6 +39,7 @@ import { RegisterComponent } from './pages/register/register.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxPaginationModule
   
 
   ],

@@ -47,7 +47,8 @@
       cursor: pointer;
       text-transform: capitalize;
       &:hover {
-        background-color: lighten($color-primary, 20%);
+        background-color: darken($color-primary, 7%);
+        color: white;
       }
     }
   }

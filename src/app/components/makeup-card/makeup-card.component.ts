@@ -10,21 +10,18 @@ export class MakeupCardComponent implements OnInit {
 
   @Input() makeupI: IMakeup;
 
-
-
- name:string;
- count:number = 25;
- brand;
+  name: string;
+  count: number = 25;
+  brand;
 
   constructor() { }
 
   ngOnInit(): void {
 
-  
-    this.name = this.makeupI.name.slice(0, this.count) + 
-    ( this.makeupI.name.length > this.count ? '...' : "" )
-
-    }
+    this.name = this.makeupI.name.slice(0, this.count) +
+      (this.makeupI.name.length > this.count ? '...' : "")
 
   }
+
+}
 

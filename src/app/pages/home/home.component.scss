@@ -67,14 +67,13 @@ section {
 
   .my-pagination {
     text-align: center;
-    //padding: 4rem;
-    font-size: 0.9rem;
 
     @media (min-width: 376px) {
-      font-size: 1.3rem;
+      font-size: 0.9rem;
     }
   }
 
+ 
   .angle-double {
     text-align: right;
     padding-right: 20px;

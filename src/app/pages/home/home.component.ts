@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   categoryFilter: string;
   categoryOptions = CATEGORY_OPTIONS;
 
+  page: number = 1;
+  totalLength: any;
 
   constructor(private _api: ApiService) { }
 
@@ -28,23 +30,21 @@ export class HomeComponent implements OnInit {
 
     this.loading = true;
 
-    this._api.getMakeup().pipe(
-
-    )
+    this._api.getMakeup()
+      //.pipe()
 
       .subscribe(response => {
-        // console.log('response received')
-        this.makeupData = response;
-        console.log(this.makeupData)
+        this.makeupData = response.reverse();
+        this.totalLength = this.makeupData.length;
 
+        //onsole.log(this.makeupData)
       },
         (error) => {
-          // console.error('Request failed with error')
           this.errorMessage = error;
           this.loading = false;
         },
         () => {
-          //  console.error('Request completed')      
+
           this.loading = false;
         }
       )
@@ -76,7 +76,9 @@ export class HomeComponent implements OnInit {
       } else {
         window.clearInterval(scrollToTop);
       }
-    }, 16);
+    }, 1);
   }
+
+
 
 }
