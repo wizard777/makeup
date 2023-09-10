@@ -1,20 +1,25 @@
 @import "/src/styles.scss";
 
-.makeup-card {
+.makeup-card { 
+  margin: 0 3rem;  
   padding: 0.5rem;
   overflow: hidden;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
-  height: 450px;
+  height: 350px;
   transition : 0.7s ease-out;
+  border: 2px solid rgb(0, 255, 145);
 
   &:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    // transform: scale(1.04);
     transition: transform 0.7s;
   }
 
   @media (min-width: 376px) {
+    margin: 0 1rem;  
+    border: 2px solid rgb(255, 0, 0);
   }
 
   p {
@@ -29,7 +34,7 @@
 
   &-img {
     text-align: center;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
 
     img {

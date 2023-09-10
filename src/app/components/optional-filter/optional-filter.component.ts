@@ -9,9 +9,11 @@ export class OptionalFilterComponent implements OnInit {
 
   showCategory = false;
 
-  @Input() placeholder: string;
+
   @Input() options: string[];
   @Input() value: string;
+
+    @Input() placeholder: string;
 
   @Output() valueChange: EventEmitter<string> = new EventEmitter();
 
@@ -25,10 +27,10 @@ export class OptionalFilterComponent implements OnInit {
 
     if (category) {
       this.showCategory = false;
-      this.placeholder = category.replace("_"," ").charAt(0).toUpperCase() + category.slice(1);
-      
+      //this.placeholder = category.replace("_"," ");
+      this.placeholder = category.charAt(0).toUpperCase() + category.slice(1)
     } else {
-      this.showCategory = true;
+     this.showCategory = true;
     }
   }
 
