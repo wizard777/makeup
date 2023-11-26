@@ -1,9 +1,9 @@
 
 <nav>
-    <a class="navbar" [routerLink] ="['/']"><header>Makeup</header> </a>
-    <a class="navbar" [routerLink]="'/home'" >Home</a>
-    <a class="navbar" >About</a>
-    <a class="navbar" >News</a>
-    <a class="navbar" [routerLink] ="['/register']">Contact</a>
-    <a class="navbar" >Others</a>
+ <a class="navbar" [routerLink] ="['/']"><header>Makeup</header> </a> 
+    <a class="navbar" [routerLink]="'/home'" [routerLinkActive]="['active']">Home</a>
+    <a class="navbar" [routerLinkActive]="['active']" >About</a>
+    <a class="navbar" [routerLinkActive]="['active']">News</a>
+    <a class="navbar" [routerLinkActive]="['active']" [routerLink] ="['/register']">Contact</a>
+    <a class="navbar" [routerLinkActive]="['active']">Others</a>
 </nav>

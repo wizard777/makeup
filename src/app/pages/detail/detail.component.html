@@ -1,50 +1,47 @@
 <div *ngIf="makeup$ | async; let makeup" class="makeup">
-    <button [routerLink]="'/'">
-        <!-- <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> -->
-        Back
-    </button>
 
     <div class="makeup-layout">
-       
+        <div class="makeup-img">
             <img [src]="makeup.image_link" onerror="this.onerror=null; this.src='assets/noImage.jpg' ">
-   
+        </div>
+
         <div class="makeup-detail">
-            <h3> {{makeup.name}}</h3>
+            <h4> {{makeup.name}}</h4>
             <div class="makeup-info">
 
                 <section class="makeup-section">
-                    <p><strong>Brand: </strong>
+                    <p><span>Brand: </span>
                         {{makeup.brand}}</p>
-                    <p><strong>Comments: </strong>
+                    <p><span>Comments: </span>
                         {{ makeup.tag_list }}</p>
-                    <p><strong>Category: </strong>
+                    <p><span>Category: </span>
                         {{ makeup.category }}</p>
                 </section>
 
                 <section class="makeup-section">
-                    <p><strong>Price: </strong>
+                    <p><span>Price: </span>
                         {{ makeup.currency }}
                         {{ makeup.price_sign }}
                         {{ makeup.price }}
                     </p>
-                    <p><strong>Product type: </strong>
+                    <p><span>Product type: </span>
                         {{ makeup.product_type }}</p>
                 </section>
-
             </div>
-            <section>
-                <p><strong>Description: </strong>
+
+            <section class="makeup-description">
+                <p><span>Description: </span>
                     {{ makeup.description }}</p>
             </section>
+
         </div>
     </div>
 
     <section class="product-colors-title">
         <p>
-            <strong>Product colors: </strong>
+            <span>Product colors: </span>
         </p>
         <div class="product-colors">
-
             <div class="product-colors-hex">
                 <div *ngFor="let item of makeup.product_colors" [style.background]="item.hex_value" class="hex-mode">
                     {{ item.colour_name }}

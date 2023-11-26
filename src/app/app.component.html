@@ -1,13 +1,11 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf=" url !== '/navbar2' "></app-navbar>
 
-<div style="grid-row: 1;">
+
+<div class="router-outlet ">
     <router-outlet (activate)="onActivate($event)"></router-outlet>
 </div>
 
-<app-footer style="
-bottom: 0;
-display: flex;
-grid-row: 2;
-height: 80px;
-position: absolute;
-width: 100%;"></app-footer>
+<app-footer *ngIf=" url !== '/' "></app-footer>
+<!-- (url !== '/' && url !== '/four') -->
+
+<!-- height: 80px; bottom: 0; -->

@@ -88,8 +88,9 @@ export class RegisterComponent implements OnInit {
     if (!this.userForm.valid) {
       return;
     }
-
+   
     alert('SUCCESS!!\n\n' + JSON.stringify(this.userForm.value, null, 8 )
     )
+    this.onReset();
   }
 }

@@ -18,14 +18,13 @@ export class DetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this._activatedRouted.paramMap.subscribe( param => {
-      this.makeup$ = this._api.getMakeupId( Number(param.get('id')) ) 
+this._activatedRouted.paramMap.subscribe(param =>{this.makeup$=this._api.getMakeupId(Number(param.get('id'))) 
     })
 
-     this._api.getMakeup().subscribe( res => {
-       this.hex = res
-      //  console.log(this.hex)
-     })
+    //  this._api.getMakeup().subscribe( res => {
+    //    this.hex = res
+    //     console.log(this.hex, 'hex')
+    //  })
   }
 
 }

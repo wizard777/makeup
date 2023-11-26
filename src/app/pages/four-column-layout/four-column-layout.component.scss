@@ -1,0 +1,45 @@
+.containerFour {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .containerFour {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .containerFour {
+    grid-template-columns: 1fr;
+    width: 70%;
+    height: auto;
+    row-gap: 0;
+
+    img {
+      width: 100%;
+      height: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .containerFour {
+    width: 70%;
+    row-gap: 0;
+    grid-template-columns: 1fr;
+    img {
+      width: 100%;
+      height: 120px;
+    }
+  }
+}

@@ -1,14 +1,17 @@
 @import "/src/styles.scss";
 
-.makeup-card { 
-  margin: 0 3rem;  
-  padding: 0.5rem;
-  overflow: hidden;
-  font-size: 1.2rem;
-  cursor: pointer;
+.makeup-card {
+  border-radius: 4px;
   height: 350px;
-  transition : 0.7s ease-out;
-  border: 2px solid rgb(0, 255, 145);
+  width: 190px;
+  margin: 16px 8px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  // display: flex;
+  // flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -17,10 +20,10 @@
     transition: transform 0.7s;
   }
 
-  @media (min-width: 376px) {
-    margin: 0 1rem;  
-    border: 2px solid rgb(255, 0, 0);
-  }
+  // @media (min-width: 376px) {
+  //   margin: 0 1rem;  
+  //   border: 2px solid rgb(255, 0, 0);
+  // }
 
   p {
     font-size: $root_font_size;
@@ -29,17 +32,39 @@
   }
 
   &-info {
-    padding: 1rem 0.5rem ;
+    padding: 1rem ;
   }
 
   &-img {
     text-align: center;
     height: 200px;
-    overflow: hidden;
+   // overflow: hidden;
+    object-fit: contain;
+    padding-left: 16px;
+    padding-right: 16px;
 
     img {
-    max-width: 100%;
+      max-width: 100%;
       height: 100%;
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .makeup-card
+ {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom:16px ;
+    border: 2px solid rgb(119, 237, 16);
+  }
+}
+
+@media screen and (max-width: 575px) {
+   .makeup-card {
+    width: 100%;
+     max-width: 250px;
+    margin-bottom:16px ;
+    border: 1px solid black;
   }
 }

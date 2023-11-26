@@ -1,40 +1,54 @@
 <section>
-    <div class="makeup-filters">
-        <div class="search-filter ">
-            <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
+    <div class="content"  >
+
+        <!-- <h1>Network Online Status: {{networkStatus}}</h1> -->
+        <!-- Pagination top -->
+        <div *ngIf="(!isLoading) && !errorMessage" >
+            <pagination-controls class="my-pagination" (pageChange)="page = $event" previousLabel="Prev"
+                nextLabel="Next">
+            </pagination-controls>
         </div>
-        <app-optional-filter placeholder="Filter by category" [options]="categoryOptions" [(value)]="categoryFilter">
-        </app-optional-filter>
-    </div>
-
-    <div *ngIf="!loading">
-        <pagination-controls class="my-pagination " (pageChange)="page = $event"></pagination-controls>
-    </div>
-
-    <div class="loader">
-        <div *ngIf="loading">
-            <img src="assets/loader.gif" width="65px"><br>
-            <strong>loading ...Please wait</strong>
+        <!-- Makeup filters -->
+        <div *ngIf="(!isLoading) && !errorMessage"  class="makeup-filters">
+            <div class="search-filter ">
+                <input type="text" placeholder="Search for a name..." [(ngModel)]="search">
+            </div>
+            <app-optional-filter placeholder="Filter by category" [options]="categoryOptions"
+                [(value)]="categoryFilter">
+            </app-optional-filter>
         </div>
-        <div *ngIf="errorMessage">
-            <strong>Warning!</strong> {{errorMessage | json}}
+        <!-- Loader -->
+        <app-spinner *ngIf="isLoading" ></app-spinner>
+
+          <!-- Error Message -->
+            <div *ngIf="errorMessage" class="errorMessage">
+                <strong>Warning!</strong> {{errorMessage | json}}
+            </div>
+       
+        <!-- Card container -->
+        <div *ngIf="!isLoading" class="card-container ">
+            <app-makeup-card *ngFor="let makeup of products |
+        paginate: { itemsPerPage: 16, currentPage: page, totalItems: totalLength }" [makeupI]="makeup">
+            </app-makeup-card>
+
         </div>
+        <!-- Pagination bottom -->
+        <div *ngIf="(!isLoading) && !errorMessage" >
+            <pagination-controls class="my-pagination " (pageChange)="page = $event" previousLabel="Prev"
+                nextLabel="Next"></pagination-controls>
+        </div>
+
+        <!-- animateToTop -->
+
+        <!-- <div *ngIf="!loading" class="angle-double">
+            <a [routerLink]="" (click)="animateToTop($event)">
+                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </a>
+        </div> -->
     </div>
 
-    <div class="makeup-card">
-        <app-makeup-card *ngFor="let makeup of products |
-        paginate: { itemsPerPage: 32, currentPage: page, totalItems: totalLength }" [makeupI]="makeup">
-        </app-makeup-card>
-    </div>
-
-    <div *ngIf="!loading">
-        <pagination-controls class="my-pagination " (pageChange)="page = $event"></pagination-controls>
-    </div>
-
-
-    <div *ngIf="!loading" class="angle-double">
-        <a [routerLink]="" (click)="animateToTop($event)">
-            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-        </a>
-    </div>
+    <ng-template #other_content>
+        <!-- <div class="other_content">Network Online Status:
+            <span> {{!!networkStatus}}</span></div> -->
+    </ng-template>
 </section>
