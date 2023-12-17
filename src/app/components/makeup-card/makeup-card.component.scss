@@ -7,8 +7,6 @@
   margin: 16px 8px;
   padding-top: 16px;
   padding-bottom: 8px;
-  // display: flex;
-  // flex-direction: row;
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
@@ -16,14 +14,8 @@
   &:hover {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-4px);
-    // transform: scale(1.04);
     transition: transform 0.7s;
   }
-
-  // @media (min-width: 376px) {
-  //   margin: 0 1rem;  
-  //   border: 2px solid rgb(255, 0, 0);
-  // }
 
   p {
     font-size: $root_font_size;
@@ -32,13 +24,12 @@
   }
 
   &-info {
-    padding: 1rem ;
+    padding: 1rem;
+    cursor: pointer;
   }
 
   &-img {
     text-align: center;
-    height: 200px;
-   // overflow: hidden;
     object-fit: contain;
     padding-left: 16px;
     padding-right: 16px;
@@ -51,20 +42,37 @@
 }
 
 @media screen and (max-width: 767px) {
-  .makeup-card
- {
-    width: 100%;
-    max-width: 250px;
-    margin-bottom:16px ;
+  .makeup-card {
+    max-width: 280px;
+    margin-bottom: 8px;
     border: 2px solid rgb(119, 237, 16);
   }
 }
 
 @media screen and (max-width: 575px) {
-   .makeup-card {
-    width: 100%;
-     max-width: 250px;
-    margin-bottom:16px ;
+  .makeup-card {
+    height: auto;
+    width: 200px;
     border: 1px solid black;
+    &-img {
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .makeup-card {
+    &-img {
+      border: 1px solid blue;
+    }
+  }
+}
+
+a {
+  color: black;
+  // text-decoration: none;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
   }
 }

@@ -23,7 +23,7 @@
     grid-template-columns: 1fr;
     width: 70%;
     height: auto;
-    row-gap: 0;
+    row-gap: 8px;
 
     img {
       width: 100%;
@@ -35,7 +35,6 @@
 @media screen and (max-width: 375px) {
   .containerFour {
     width: 70%;
-    row-gap: 0;
     grid-template-columns: 1fr;
     img {
       width: 100%;

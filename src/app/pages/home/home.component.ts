@@ -4,6 +4,7 @@ import { map, take, takeUntil } from 'rxjs/operators';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
+
 const CATEGORY_OPTIONS = ['pencil', 'lipstick', 'liquid', 'powder', 'lip_gloss', 'palette', 'cream', 'mineral', 'bb_cc', 'highlighter'];
 
 @Component({
@@ -14,8 +15,8 @@ const CATEGORY_OPTIONS = ['pencil', 'lipstick', 'liquid', 'powder', 'lip_gloss',
 })
 export class HomeComponent implements OnInit {
 
-  networkStatus: any;
-  networkStatus$: Subscription = Subscription.EMPTY;
+  // networkStatus: any;
+  // networkStatus$: Subscription = Subscription.EMPTY;
 
 
 
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
     this._api.getMakeup()
      // .pipe()
       .subscribe(response => {
-        this.makeupData = response;
+        this.makeupData = response.reverse();
         this.totalLength = this.makeupData.length;
 
        // console.log(this.makeupData)

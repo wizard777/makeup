@@ -1,11 +1,13 @@
 @import "/src/styles.scss";
 
 h4 {
-  margin-bottom: 20px;
+  margin:20px 0;
+  text-align: center;
+ 
 }
 .form-group {
   width: 500px;
-  margin-bottom: 20px;
+  margin-bottom: 220px;
 }
 
 input[type="button"],
@@ -30,14 +32,26 @@ input[type="submit"],
 }
 
 input[type="submit"]:disabled {
- // background: lighten($color-primary, 10%);
+  background: lighten($color-primary, 30%);
   cursor: no-drop;
   &:hover {
-    background: lighten($color-primary, 10%);
+   //background: lighten($color-primary, 10%);
   }
 }
 
 span {
   color: red;
   font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+  .form-group {
+    width: 280px;
+    padding: 1rem;
+    margin-bottom: 220px;
+  }
+  .text-center {
+    display: flex;
+  }
+  
 }

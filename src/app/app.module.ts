@@ -17,6 +17,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { NgxPaginationModule }  from  'ngx-pagination';
 import { FourColumnLayoutComponent } from './pages/four-column-layout/four-column-layout.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { AutoFocusDirective } from './directive/auto-focus.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     FourColumnLayoutComponent,
  
     LazyLoadImagesDirective,
+       AutoFocusDirective,
       
   
   ],

@@ -1,10 +1,10 @@
-<h4 class="text-center ">Register</h4>
+<h4 >Register</h4>
 
-<div class="col-md-4 mx-auto">
+<div class=" form-group col-md-4 mx-auto">
     <form [formGroup]="userForm" (ngSubmit)="onSubmit() " novalidate>
 
         <div>
-            <label for="username" class="col-sm-4 col-form-label ">Username</label>
+            <label  for="username" class="col-sm-4 col-form-label ">Username</label>
             <input type="text" id="username" class="form-control "
                 [class.is-invalid]="username.invalid && username.touched" formControlName="username">
             <div *ngIf="(username.touched && username.invalid) || username.dirty" class="text-danger">
@@ -67,10 +67,11 @@
             <input value="Reset" type="button" (click)="onReset()">
         </div>
     </form>
-</div>
-
- <div class="col-md-3 mx-auto">
+    <div class="col-md-6 mx-auto">
     <div>userForm.valid = <span>{{userForm.valid }}</span> </div>
     <div>userForm.invalid= <span>{{userForm.invalid }}</span> </div>
     <div>userForm.status = <span>{{userForm.status }}</span> </div>
 </div> 
+</div>
+
+ 
