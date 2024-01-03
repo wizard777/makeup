@@ -1,0 +1,49 @@
+<div class="containerNav">
+  <nav>
+    <div class="navTop" >
+        <h2><a [routerLink]="['/']"><header>MAKEUp</header> </a> </h2>
+        
+    </div>
+    
+<!-- 
+    <div *ngIf="!sticky; else navbarScroll"> -->
+       
+      <div class="navbar">
+        
+        <a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a>
+        <a [routerLinkActive]="['active']">About</a>
+        <a [routerLinkActive]="['active']">News</a>
+        <a [routerLinkActive]="['active']" >Contact</a>
+        <a [routerLinkActive]="['active']">Others</a>
+        <div class="login">
+          <a [routerLink] ="['/register']">Register&nbsp;/&nbsp;Login</a>
+        </div>
+      </div>
+   
+    <hr />
+
+
+  <!-- <ng-template #navbarScroll>
+    <div class="dentro">
+      <div class="nav">
+        <a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a>
+        <a [routerLinkActive]="['active']">About</a>
+        <a [routerLinkActive]="['active']">News</a>
+        <a [routerLinkActive]="['active']" [routerLink]="['/register']">Contact</a>
+        <a [routerLinkActive]="['active']">Others</a>
+        <input type="text" />
+        <div class="login">
+          <a href="#contact">Rejestracja&nbsp;/&nbsp;Login</a>
+        </div>
+      </div>
+    </div>
+  </ng-template> -->
+
+
+
+  <!-- <div style="margin-top: 150px">
+    <p>{{ sticky }}</p>
+    <p>{{ yy }}</p>
+  </div> -->
+</nav>
+</div>

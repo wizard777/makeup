@@ -18,6 +18,10 @@ import { NgxPaginationModule }  from  'ngx-pagination';
 import { FourColumnLayoutComponent } from './pages/four-column-layout/four-column-layout.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AutoFocusDirective } from './directive/auto-focus.directive';
+import { CheckNetworkStatusComponent } from './components/check-network-status/check-network-status.component';
+import { ProgressComponent } from './components/progress/progress.component';
+import { Navbar1Component } from './components/navbar1/navbar1.component';
+import { VerticalComponent } from './components/vertical/vertical.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { AutoFocusDirective } from './directive/auto-focus.directive';
  
     LazyLoadImagesDirective,
        AutoFocusDirective,
+       CheckNetworkStatusComponent,
+       ProgressComponent,
+       Navbar1Component,
+       VerticalComponent,
       
   
   ],

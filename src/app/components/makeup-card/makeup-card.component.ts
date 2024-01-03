@@ -4,24 +4,30 @@ import { IMakeup } from 'src/app/interface/i-makeup';
 @Component({
   selector: 'app-makeup-card',
   templateUrl: './makeup-card.component.html',
-  styleUrls: ['./makeup-card.component.scss']
+  styleUrls: ['./makeup-card.component.scss'],
 })
 export class MakeupCardComponent implements OnInit {
-
   @Input() makeupI: IMakeup;
 
   name: string;
   count: number = 25;
   brand;
 
-  constructor() { }
+  constructor() {}
+
+  pictNotLoading(event) {
+    event.target.src = 'assets/noImage.jpg';
+  }
+     
+     // html code
+  // onerror="this.onerror=null;
+  // this.src='assets/noImage.jpg'"
+   
 
   ngOnInit(): void {
-
-    this.name = this.makeupI.name.slice(0, this.count) +
-      (this.makeupI.name.length > this.count ? '...' : "")
-
-
+    this.name =
+      this.makeupI.name.slice(0, this.count) +
+      (this.makeupI.name.length > this.count ? '...' : '');
   }
 }
 @Directive({
@@ -39,4 +45,3 @@ export class LazyLoadImagesDirective {
     }
   }
 }
-

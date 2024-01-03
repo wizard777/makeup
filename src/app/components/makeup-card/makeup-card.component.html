@@ -4,12 +4,12 @@
       <div class="makeup-card-img">
         <img
           [src]="makeupI.image_link"
-          onerror="this.onerror=null; this.src='assets/noImage.jpg' "
+          (error)="pictNotLoading($event)"
         />
       </div>
 
       <div class="makeup-card-info">
-          <h4>{{ name }}</h4>
+          <h5> <b>{{ name }}</b> </h5>
           <p><strong>Brand: </strong> {{ makeupI.brand }}</p>
           <p><strong>Category: </strong> {{ makeupI.category }}</p>
           <p><strong>Product type: </strong> {{ makeupI.product_type }}</p>

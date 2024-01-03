@@ -1,6 +1,4 @@
-import { Component, OnDestroy, OnInit, VERSION} from '@angular/core';
-import { Subscription, fromEvent, merge, of } from 'rxjs';
-import { map, take, takeUntil } from 'rxjs/operators';
+import { Component, HostListener, OnInit} from '@angular/core';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -15,11 +13,7 @@ const CATEGORY_OPTIONS = ['pencil', 'lipstick', 'liquid', 'powder', 'lip_gloss',
 })
 export class HomeComponent implements OnInit {
 
-  // networkStatus: any;
-  // networkStatus$: Subscription = Subscription.EMPTY;
-
-
-
+ 
   makeupData: IMakeup[];
   isLoading: boolean = true;
   errorMessage = "";
@@ -33,16 +27,14 @@ export class HomeComponent implements OnInit {
   constructor(private _api: ApiService) { }
 
   ngOnInit(): void {
-   // this.checkNetworkStatus();
+ 
   
    // this.loading = true;
     this._api.getMakeup()
-     // .pipe()
+     // .pipe( )
       .subscribe(response => {
-        this.makeupData = response.reverse();
+        this.makeupData = response;
         this.totalLength = this.makeupData.length;
-
-       // console.log(this.makeupData)
       },
         (error) => {
           this.errorMessage = error;
@@ -82,26 +74,16 @@ export class HomeComponent implements OnInit {
   //   }, 1);
   // } 
 
+  sticky: boolean = false;
 
 
-  //  Network Status
+  @HostListener('window:scroll', ['$event']) onScroll(event: Event) {
+    let window = event.currentTarget as Window;
+    console.log('scroll Y', Math.floor(window.scrollY), this.sticky);
+
+     this.sticky = window.scrollY >= 130;
   
-  // ngOnDestroy(): void {
-  //   this.networkStatus$.unsubscribe();
-  // }
-
-  // checkNetworkStatus() {
-  //   this.networkStatus = navigator.onLine;
-  //   this.networkStatus$ = merge(
-  //     of(null),
-  //     fromEvent(window, 'online'),
-  //     fromEvent(window, 'offline')
-  //   )
-  //     .pipe(map(() => navigator.onLine))
-  //     .subscribe(status => {
-  //       console.log('status', status);
-  //       this.networkStatus = status;
-  //     });
-  // }
+    
+  }
 
 }

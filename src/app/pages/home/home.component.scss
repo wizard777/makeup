@@ -1,12 +1,133 @@
 @import "/src/styles.scss";
 
+  /*Navbar Responsive Styles in progress */
+
+.containerNav {
+  width: 80%;
+  margin: 0 auto;
+
+  nav {
+    .navTop {
+      margin: 30px auto 25px 100px;
+
+      h2 a {
+        text-decoration: underline;
+        color: #686666;
+      }
+    }
+    .navbar {
+      margin: 0 auto;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      width: 85%;
+      transition: top 0.3s;
+      justify-content: flex-start;
+      
+      a:first-child {
+        margin-left: 50px;
+      }
+
+      a {
+        margin-right: 25px;
+        font-size: 16px;
+        color: black;
+        text-decoration: none;
+      }
+
+      .login {
+        position: absolute;
+        right: 0;
+
+        a {
+          font-size: 12px;
+          color: #5b5959;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .navbar a:hover,
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    .nav a:hover:nth-child(3) {
+      text-decoration: none;
+    }
+
+    .navbar .active,
+    .nav .active
+     {
+      text-decoration: underline;
+    }
+  }
+
+
+  .nav {
+    height: 90px;
+    border-bottom: solid 0.2px rgb(137, 134, 134);
+    padding-top: 30px;
+    width: 80%;
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    top: 0;
+    transition: top 0.5s;
+    /* Transition effect when sliding down (and up) */
+    margin: 0 auto;
+    
+    a {
+      color: black;
+      font-size: 14px;
+      justify-content: flex-start;
+      margin-right: 25px;
+      text-decoration: none;
+    }
+
+      .navInput {
+      position: absolute;
+      left: 40%;
+
+      input {
+        width: 140px;
+        border: none;
+        border-bottom: solid 1px red;
+        padding-left: 10px;
+        font-size: 14px;
+        outline: none;
+      }
+    }
+
+   .login {
+      position: absolute;
+      right: 0;
+
+      a {
+        margin-right: 80px;
+        font-size: 12px;
+        color: #7b7979;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .nav a:first-child {
+    margin-left: 40px;
+  }
+
+  hr {
+    border: none;
+    height: 0.3px;
+    /* Set the hr color */
+    color: #575656;
+    background-color: #575656;
+  
+  }
+}
+
+// End Navbar
+
 section {
-  // margin: 1rem;
-
-  // @media screen and (max-width: 767px) {
-  //   width: 100%;
-  // }
-
   .errorMessage {
     padding: 50px;
     font-size: 14px;
@@ -19,12 +140,12 @@ section {
     max-width: 960px;
     flex-direction: column;
     align-items: center;
-    border: 2px solid rgb(233, 236, 16);
+    //  border: 2px solid rgb(233, 236, 16);
     margin-bottom: 200px;
   }
 
   .card-container {
-    border: 2px solid rgb(14, 142, 72);
+    // border: 2px solid rgb(14, 142, 72);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -41,11 +162,10 @@ section {
     justify-content: space-between;
   }
 
-  .search-filter {
-  }
+  .search-filter {}
 
   .makeup-filters input {
-    width: 200px;
+    width: 160px;
     border: none;
     border-bottom: solid 1px $color-primary;
     padding: 0.6rem 2rem 0.2rem 1.4rem;
@@ -58,9 +178,10 @@ section {
     .content {
       margin-bottom: 350px;
     }
+
     .card-container {
       width: 100%;
-      border: 2px solid rgb(14, 27, 142);
+      //  border: 2px solid rgb(14, 27, 142);
     }
   }
 
@@ -68,11 +189,13 @@ section {
     .content {
       margin-bottom: 230px;
     }
+
     .card-container {
       display: grid;
       width: 100%;
-      border: 3px solid black;
+      // border: 3px solid black;
     }
+
     .makeup-filters {
       width: 100%;
       //x-width: 350px;
@@ -109,6 +232,7 @@ section {
   .my-pagination {
     font-size: 1.2rem;
     margin-top: 20px;
+
     @media screen and (max-width: 575px) {
       font-size: 0.9rem;
       //text-align: center;
@@ -136,6 +260,7 @@ section {
   padding-top: 150px;
   text-align: center;
   font-size: 18px;
+
   span {
     color: red;
     text-transform: uppercase;
