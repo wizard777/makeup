@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
-import { LazyLoadImagesDirective, MakeupCardComponent } from './components/makeup-card/makeup-card.component';
+import { MakeupCardComponent } from './components/makeup-card/makeup-card.component';
 import { DetailComponent } from './pages/detail/detail.component';
 import { OptionalFilterComponent } from './components/optional-filter/optional-filter.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -36,7 +36,7 @@ import { VerticalComponent } from './components/vertical/vertical.component';
     SpinnerComponent,
     FourColumnLayoutComponent,
  
-    LazyLoadImagesDirective,
+
        AutoFocusDirective,
        CheckNetworkStatusComponent,
        ProgressComponent,

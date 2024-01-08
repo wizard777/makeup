@@ -2,7 +2,7 @@
   <a class="linkA"  [routerLink]="'/' + makeupI.id" rel="noopener noreferrer">
     <div *ngIf="makeupI" class="makeup-card">
       <div class="makeup-card-img">
-        <img
+        <img img
           [src]="makeupI.image_link"
           (error)="pictNotLoading($event)"
         />

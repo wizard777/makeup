@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit} from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { timer } from 'rxjs';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -9,11 +10,10 @@ const CATEGORY_OPTIONS = ['pencil', 'lipstick', 'liquid', 'powder', 'lip_gloss',
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
- 
+
 })
 export class HomeComponent implements OnInit {
 
- 
   makeupData: IMakeup[];
   isLoading: boolean = true;
   errorMessage = "";
@@ -21,46 +21,53 @@ export class HomeComponent implements OnInit {
   categoryFilter: string;
   categoryOptions = CATEGORY_OPTIONS;
 
-  page: number = 1;
-  totalLength: any;
+  page = 0;
+
+  //itemsPerPage: 12;
+  totalItems: any;
+  filterLength: any;
 
   constructor(private _api: ApiService) { }
 
   ngOnInit(): void {
- 
-  
-   // this.loading = true;
     this._api.getMakeup()
-     // .pipe( )
-      .subscribe(response => {
+      .subscribe((response) => {
         this.makeupData = response;
-        this.totalLength = this.makeupData.length;
       },
         (error) => {
           this.errorMessage = error;
           this.isLoading = false;
         },
         () => {
-
           this.isLoading = false;
         }
-      ) 
+      )
   }
 
   get products() {
-    return this.makeupData ?
+    let arr = this.makeupData ?
       this.makeupData.filter(makeup => this.search ?
-         makeup.name?.toLowerCase().includes(this.search)
+        makeup.name?.toLowerCase().includes(this.search)
         : makeup
-        )
-
-        // filter by  category
-        .filter(makeup => this.categoryFilter ?
-          makeup.category?.includes(this.categoryFilter)
-          : this.makeupData
-        )
+      )
       : this.makeupData;
+    this.filterLength = arr.length;
+    return arr
   }
+
+  gty(page: any) {
+    this._api.getPage(page).subscribe((data: any) => {
+      this.makeupData = data;
+      this.totalItems = this.makeupData.length;
+    });
+  }
+  // filter by  category
+  // .filter(makeup => this.categoryFilter ?
+  //   makeup.category?.includes(this.categoryFilter)
+  //   : this.makeupData
+  // )
+  //   : this.makeupData;
+  // }
 
   // animateToTop(e) {
   //   e.preventDefault();
@@ -76,14 +83,8 @@ export class HomeComponent implements OnInit {
 
   sticky: boolean = false;
 
-
   @HostListener('window:scroll', ['$event']) onScroll(event: Event) {
     let window = event.currentTarget as Window;
-    console.log('scroll Y', Math.floor(window.scrollY), this.sticky);
-
-     this.sticky = window.scrollY >= 130;
-  
-    
+    this.sticky = window.scrollY >= 130;
   }
-
 }

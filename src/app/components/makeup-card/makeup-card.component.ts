@@ -19,10 +19,6 @@ export class MakeupCardComponent implements OnInit {
     event.target.src = 'assets/noImage.jpg';
   }
      
-     // html code
-  // onerror="this.onerror=null;
-  // this.src='assets/noImage.jpg'"
-   
 
   ngOnInit(): void {
     this.name =
@@ -30,18 +26,19 @@ export class MakeupCardComponent implements OnInit {
       (this.makeupI.name.length > this.count ? '...' : '');
   }
 }
-@Directive({
-  selector: 'img',
-})
-export class LazyLoadImagesDirective {
-  constructor({ nativeElement }: ElementRef<HTMLImageElement>) {
-    const supports = 'loading' in HTMLImageElement.prototype;
+// @Directive({
+//   selector: 'img',
+// })
 
-    if (supports) {
-      nativeElement.setAttribute('loading', 'lazy');
-      console.log('Loading attribute added!', nativeElement.loading);
-    } else {
-      console.log('Adding loading attribute is not supported!');
-    }
-  }
-}
+// export class LazyLoadImagesDirective {
+//   constructor({ nativeElement }: ElementRef<HTMLImageElement>) {
+//     const supports = 'loading' in HTMLImageElement.prototype;
+
+//     if (supports) {
+//       nativeElement.setAttribute('loading', 'lazy');
+//       console.log('Loading attribute added!', nativeElement.loading);
+//     } else {
+//       console.log('Adding loading attribute is not supported!');
+//     }
+//   }
+// }
