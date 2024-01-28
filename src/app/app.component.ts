@@ -13,7 +13,8 @@ export class AppComponent {
   
 
   constructor(private router: Router) {
-
+  
+     // wykrywa koneic zmiany trasy
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.url = event.url;
@@ -21,7 +22,9 @@ export class AppComponent {
     })
   }
 
-  onActivate(event) {
+  // metoda przewija okno do a konkretnym miejscu w dokumencie
+  // strona przewijana do góry podczas przechodzenia ze strony na inną
+  onActivate() {
     window.scroll(0,0);
 } 
 }

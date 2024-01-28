@@ -30,7 +30,9 @@ export class ApiService {
                 : a.id === b.id ? (a.brand > b.brand ? 1 : -1)
                   : -1
             ),
-        ),shareReplay(1)
+        )
+        // cache
+        ,shareReplay(1)
       )
     }
 

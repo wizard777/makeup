@@ -1,0 +1,83 @@
+@import "/src/styles.scss";
+
+h4 {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.form-group {
+    width: 500px;
+    margin-bottom: 220px;
+}
+.text-center {
+    margin-top: 30px;
+  }
+
+.registerBtn {
+    display: block;
+    padding: 0.4rem 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border: solid 0.05rem $color-primary;
+    background-color: lighten($color-primary, 10%);
+    border-radius: 0.2rem;
+    color: white;
+    text-align: center;
+
+    &:hover {
+        background: lighten($color-primary, 25%);
+        text-decoration: none;
+    }
+}
+
+input[type="button"],
+input[type="submit"] {
+    @extend .registerBtn;
+    display: inline;
+    padding: 0.4rem 0;
+    width: 100px;
+    margin: 1.5rem;
+    //   cursor: pointer;
+    //   border: none;
+    //   outline: none;
+    //   border: solid 0.05rem $color-primary;
+    //   background-color: lighten($color-primary, 10%);
+    //   border-radius: 0.2rem;
+    //   color: white;
+}
+
+// input[type="submit"],
+// [type="button"] {
+//   &:hover {
+//     background: lighten($color-primary, 25%);
+//   }
+// }
+
+input[type="submit"]:disabled {
+    background: lighten($color-primary, 30%);
+    cursor: no-drop;
+
+    &:hover {
+        //background: lighten($color-primary, 10%);
+    }
+}
+
+span {
+    color: red;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+    .form-group {
+        width: 280px;
+        padding: 1rem;
+        margin-bottom: 220px;
+    }
+
+    .text-center {
+        display: flex;
+    }
+}

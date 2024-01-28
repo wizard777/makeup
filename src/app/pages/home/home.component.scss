@@ -1,6 +1,6 @@
 @import "/src/styles.scss";
 
-  /*Navbar Responsive Styles in progress */
+/*Navbar Responsive Styles in progress */
 
 .containerNav {
   width: 80%;
@@ -9,12 +9,12 @@
   nav {
     .navTop {
       margin: 30px auto 25px 100px;
-
       h2 a {
         text-decoration: underline;
         color: #686666;
       }
     }
+
     .navbar {
       margin: 0 auto;
       margin-top: 30px;
@@ -22,7 +22,6 @@
       width: 85%;
       transition: top 0.3s;
       justify-content: flex-start;
-      
       a:first-child {
         margin-left: 50px;
       }
@@ -37,7 +36,6 @@
       .login {
         position: absolute;
         right: 0;
-
         a {
           font-size: 12px;
           color: #5b5959;
@@ -50,20 +48,19 @@
     .nav a:hover {
       text-decoration: underline;
     }
-    .nav a:hover:nth-child(3) {
+
+    .nav a:hover:nth-child(4) {
       text-decoration: none;
     }
 
     .navbar .active,
-    .nav .active
-     {
+    .nav .active {
       text-decoration: underline;
     }
   }
 
-
   .nav {
-    height: 90px;
+    height: 100px;
     border-bottom: solid 0.2px rgb(137, 134, 134);
     padding-top: 30px;
     width: 80%;
@@ -75,7 +72,14 @@
     transition: top 0.5s;
     /* Transition effect when sliding down (and up) */
     margin: 0 auto;
-    
+    h2 a:first-of-type {
+      text-decoration: underline;
+      font-size: 25px;
+      font-weight: bold;
+      color: #686666;
+      margin-left: 30px;
+    }
+
     a {
       color: black;
       font-size: 14px;
@@ -84,13 +88,14 @@
       text-decoration: none;
     }
 
-      .navInput {
+    .navInput {
       position: absolute;
-      left: 40%;
-      p{
+      left: 45%;
+
+      p {
         margin-top: 10px;
         font-size: 14px;
-       text-align: center;
+        text-align: center;
       }
 
       input {
@@ -103,21 +108,23 @@
       }
     }
 
-   .login {
+    .login {
       position: absolute;
       right: 0;
+      text-align: left;
 
       a {
-        margin-right: 80px;
+        // margin-right: 80px;
         font-size: 12px;
         color: #7b7979;
         text-decoration: underline;
       }
+
+      p {
+        font-size: 14px;
+        padding-top: 15px;
+      }
     }
-  }
-  
-  .nav a:first-child {
-    margin-left: 40px;
   }
 
   hr {
@@ -126,7 +133,6 @@
     /* Set the hr color */
     color: #575656;
     background-color: #575656;
-  
   }
 }
 
@@ -170,19 +176,23 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    .search-filter {}
+
+    input {
+
+      width: 140px;
+      border: none;
+      border-bottom: solid 1px red;
+      padding-left: 10px;
+      font-size: 14px;
+      outline: none;
+    }
   }
 
-  .search-filter {}
 
-  .makeup-filters input {
- 
-    width: 140px;
-    border: none;
-    border-bottom: solid 1px red;
-    padding-left: 10px;
-    font-size:14px;
-    outline: none;
-  }
+
+
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
@@ -267,14 +277,14 @@ section {
   //   }
 }
 
-.other_content {
-  padding-top: 150px;
-  text-align: center;
-  font-size: 18px;
+// .other_content {
+//   padding-top: 150px;
+//   text-align: center;
+//   font-size: 18px;
 
-  span {
-    color: red;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-}
+//   span {
+//     color: red;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//   }
+// }

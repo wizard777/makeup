@@ -9,12 +9,15 @@ h4 {
   width: 500px;
   margin-bottom: 220px;
 }
+.text-center {
+  margin-top: 30px;
+}
 
-input[type="button"],
-input[type="submit"] {
+.loginBtn {
+  display: block;
   padding: 0.4rem 0;
-  width: 100px;
-  margin: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 30px;
   cursor: pointer;
   border: none;
   outline: none;
@@ -22,14 +25,23 @@ input[type="submit"] {
   background-color: lighten($color-primary, 10%);
   border-radius: 0.2rem;
   color: white;
-}
+  text-align: center;
 
-input[type="submit"],
-[type="button"] {
   &:hover {
-    background: lighten($color-primary, 25%);
+      background: lighten($color-primary, 25%);
+      text-decoration: none;
   }
 }
+
+input[type="button"],
+input[type="submit"] {
+  @extend .loginBtn;
+  display: inline;
+  padding: 0.4rem 0;
+  width: 100px;
+  margin: 1.5rem;
+}
+
 
 input[type="submit"]:disabled {
   background: lighten($color-primary, 30%);
@@ -51,7 +63,9 @@ span {
     margin-bottom: 220px;
   }
   .text-center {
+  
     display: flex;
+   
   }
   
 }

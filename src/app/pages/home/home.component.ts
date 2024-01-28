@@ -1,5 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
-import { timer } from 'rxjs';
+import {  Component, DoCheck, HostListener, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -27,9 +26,13 @@ export class HomeComponent implements OnInit {
   totalItems: any;
   filterLength: any;
 
+  //cacheSubscription: Subscription;
+
   constructor(private _api: ApiService) { }
+  
 
   ngOnInit(): void {
+   // this.cacheSubscription= 
     this._api.getMakeup()
       .subscribe((response) => {
         this.makeupData = response;
@@ -44,6 +47,7 @@ export class HomeComponent implements OnInit {
       )
   }
 
+
   get products() {
     let arr = this.makeupData ?
       this.makeupData.filter(makeup => this.search ?
@@ -55,12 +59,14 @@ export class HomeComponent implements OnInit {
     return arr
   }
 
-  gty(page: any) {
+ 
+  getPag(page: any) {
     this._api.getPage(page).subscribe((data: any) => {
       this.makeupData = data;
       this.totalItems = this.makeupData.length;
     });
   }
+
   // filter by  category
   // .filter(makeup => this.categoryFilter ?
   //   makeup.category?.includes(this.categoryFilter)
@@ -83,6 +89,7 @@ export class HomeComponent implements OnInit {
 
   sticky: boolean = false;
 
+   // zmiana nav po scrollu na 130 px w doł
   @HostListener('window:scroll', ['$event']) onScroll(event: Event) {
     let window = event.currentTarget as Window;
     this.sticky = window.scrollY >= 130;

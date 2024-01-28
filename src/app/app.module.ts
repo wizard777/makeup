@@ -22,6 +22,8 @@ import { CheckNetworkStatusComponent } from './components/check-network-status/c
 import { ProgressComponent } from './components/progress/progress.component';
 import { Navbar1Component } from './components/navbar1/navbar1.component';
 import { VerticalComponent } from './components/vertical/vertical.component';
+import { LoginComponent } from './pages/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { VerticalComponent } from './components/vertical/vertical.component';
        ProgressComponent,
        Navbar1Component,
        VerticalComponent,
+       LoginComponent
+       
       
   
   ],

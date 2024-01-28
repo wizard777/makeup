@@ -67,6 +67,11 @@
             <input value="Reset" type="button" (click)="onReset()">
         </div>
     </form>
+
+    <div>
+        <a class="loginBtn" [routerLink]="['/login']">Back to Login</a>
+    </div>
+
     <div class="col-md-6 mx-auto">
     <div>userForm.valid = <span>{{userForm.valid }}</span> </div>
     <div>userForm.invalid= <span>{{userForm.invalid }}</span> </div>

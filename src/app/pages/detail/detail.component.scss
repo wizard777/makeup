@@ -1,25 +1,32 @@
 @import "/src/styles.scss";
 
 .makeup {
-  h4 { padding-left: 2rem; font-weight: bold; }
-  p { padding: 0.25rem; }
+  h4 {
+    padding-left: 2rem;
+    font-weight: bold;
+  }
+
+  p {
+    padding: 0.25rem;
+  }
 
   padding-top: 4rem;
   margin-bottom: 2rem;
   font-size: $root_font_size;
   font-size: 1.1rem;
   margin: 2rem 100px 200px 100px;
- 
+
   @media screen and (max-width: 376px) {
-    h4{ padding: 0.5rem 1rem; }
+    h4 {
+      padding: 0.5rem 1rem;
+    }
+
     padding-top: 2rem;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 200px;
-    
-    img {
-     
-    }
+
+    img {}
   }
 
   &-layout {
@@ -30,7 +37,7 @@
       display: grid;
     }
   }
- 
+
   &-img {
     width: 500px; //szerokosc
     height: 360px; // wysokosc
@@ -47,16 +54,17 @@
       object-fit: contain;
 
       @media screen and (max-width: 376px) {
-       width: 45%;
+        width: 45%;
       }
     }
   }
 
   &-detail {
     width: 50%;
+
     @media screen and (max-width: 376px) {
-     width: 90%;
-     padding-left: 2rem;
+      width: 90%;
+      padding-left: 2rem;
     }
   }
 
@@ -64,6 +72,7 @@
     p {
       text-transform: capitalize;
     }
+
     display: flex;
     justify-content: space-between;
   }
@@ -73,6 +82,7 @@
       font-size: 15px;
       font-weight: 800;
     }
+
     margin: 1rem 0;
     width: 50%;
   }
@@ -82,12 +92,15 @@
       font-size: 15px;
       font-weight: 800;
     }
+
     margin-top: 1.2rem;
+
     @media screen and (max-width: 376px) {
       margin: 1rem 3rem 1rem 0;
-     }
+    }
   }
 }
+
 .product-colors-title p {
   margin: 1rem;
   font-size: 15px;
@@ -102,16 +115,17 @@
 
   @media screen and (max-width: 376px) {
     margin: 1rem 5rem 5rem 2rem;
-   }
+  }
 
   &-hex {
     display: grid;
     column-gap: 1rem;
     row-gap: 0.3rem;
     grid-template-columns: repeat(6, 1fr);
+
     @media screen and (max-width: 376px) {
       display: block;
-     }
+    }
   }
 
   .hex-mode {
@@ -126,3 +140,25 @@
     color: $header_font_color;
   }
 }
+
+input[type="button"] {
+  width: 100px;
+  padding: 0.4rem 0;
+  margin:30px 0 30px 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border: solid 0.05rem $color-primary;
+  background-color: lighten($color-primary, 10%);
+  border-radius: 0.2rem;
+  color: white;
+  text-align: center;
+
+  &:hover {
+    background: lighten($color-primary, 25%);
+    text-decoration: none;
+  }
+}
+
+
+ 
