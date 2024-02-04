@@ -56,7 +56,9 @@ input[type="submit"] {
 //   }
 // }
 
-input[type="submit"]:disabled {
+input[type="submit"]:disabled,
+input[type="button"]:disabled
+ {
     background: lighten($color-primary, 30%);
     cursor: no-drop;
 

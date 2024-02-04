@@ -1,52 +1,50 @@
 <div class="containerNav">
   <nav>
-    
-   <div class="navTop">
+    <!-- <div class="navTop">
        <h2>
         <a [routerLink]="['/']">
           <header>MakeUp</header>
         </a>
       </h2>
-    </div> 
-
-    <div *ngIf="!sticky; else navTop">
-      <div class="navbar">
-    
-        <a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a>
-        <a [routerLinkActive]="['active']">About</a>
-        <a [routerLinkActive]="['active']">News</a>
-        <a [routerLinkActive]="['active']">Contact</a>
-        <a [routerLinkActive]="['active']">Others</a>
-        <div class="login">
-          <a [routerLink]="['/login']">Register&nbsp;/&nbsp;Login</a>
-        </div>
-      </div>
-      <hr />
-
+    </div>  -->
+    <div>
+      <h2><a [routerLink]="['/']">
+          <header>MakeUp</header>
+        </a></h2>
     </div>
-    <hr />
+    <div>
+      <ul>
+        <li><a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLinkActive]="['active']">About</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLinkActive]="['active']">News</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLinkActive]="['active']">Contact</a></li>
+        <li><a [routerLinkActive]="['active']" [routerLinkActive]="['active']" >Others</a></li>
+        <li><a [routerLink]="['/login']" [routerLinkActive]="['active']">Register&nbsp;/&nbsp;Login</a></li>
+      </ul>
+    </div>
+    <div *ngIf="!sticky; else navTop">
+    </div>
 
     <ng-template #navTop>
-      <div class="nav">
-       <h2><a [routerLink]="'/'" ><header>MakeUp</header> </a> </h2> 
-        <a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a>
-        <a [routerLinkActive]="['active']">About</a>
-        <a>News<app-vertical></app-vertical></a>
-        <div class="navInput">
-          <input  appAutoFocus type="text" 
-          placeholder="Search for a name..." 
-          [(ngModel)]="search" />
-          
+      <div class="navbarScroll">
+        <ul>
+          <li><a [routerLink]="['/']">
+              <header>MakeUp</header>
+            </a></li>
+          <li><a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a></li>
+          <li><a [routerLinkActive]="['active']" [routerLinkActive]="['active']">About</a></li>
+          <li><a>News<app-vertical></app-vertical></a></li>
+          <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
+          <li><a [routerLink]="['/login']" [routerLinkActive]="['active']">Register&nbsp;/&nbsp;Login</a></li>
+        </ul>
+        <div class="hr">
+          <hr />
         </div>
-        <div class="login">
-          <a [routerLink]="['/login']">Register&nbsp;/&nbsp;Login</a>
-          <p>
-            <!-- <b>{{ filterLength}}</b> items found</p> -->
-        </div>
-       
-
       </div>
     </ng-template>
+    <div class="hr">
+      <hr />
+    </div>
   </nav>
 </div>
 
@@ -55,35 +53,29 @@
     <!-- items found -->
     <!-- Pagination top -->
     <div *ngIf="!isLoading && !errorMessage && filterLength ">
-      <pagination-controls class="my-pagination" 
-            (pageChange)="getPag((page = $event))"
-            [responsive]="true"
-            previousLabel="Prev" nextLabel="Next">
+      <pagination-controls class="my-pagination" (pageChange)="getPag((page = $event))" [responsive]="true"
+        previousLabel="Prev" nextLabel="Next">
       </pagination-controls>
     </div>
     <!-- Makeup filters -->
     <div *ngIf="!isLoading && !errorMessage" class="makeup-filters">
       <div class="search-filter">
-        <input appAutoFocus type="text"
-         placeholder="Search for a name..."
-         [(ngModel)]="search" />
+        <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
       </div>
       <!-- <app-optional-filter
         placeholder="Filter by category"
         [options]="categoryOptions"
         [(value)]="categoryFilter">
       </app-optional-filter> -->
-      <div class="itemsFound" >
+      <div class="itemsFound">
         <p *ngIf="makeupData">
-         <!-- <b>{{ filterLength}}</b> items found</p> -->
-        
+          <!-- <b>{{ filterLength}}</b> items found</p> -->
+
       </div>
     </div>
     <!-- Loader -->
     <app-spinner *ngIf="isLoading"></app-spinner>
-
     <!-- <app-progress *ngIf="isLoading"></app-progress> -->
-
     <!-- Error Message -->
     <div *ngIf="errorMessage" class="errorMessage">
       <strong>Warning!</strong> {{ errorMessage | json }}
@@ -99,17 +91,14 @@
                 itemsPerPage: 12, 
                 currentPage: page, 
                 totalItems: totalItems 
-                }" 
-                [makeupI]="makeup">
+                }" [makeupI]="makeup">
       </app-makeup-card>
 
     </div>
     <!-- Pagination bottom -->
     <div *ngIf="!isLoading && !errorMessage && filterLength">
-      <pagination-controls class="my-pagination" 
-          (pageChange)="getPag((page = $event))" 
-          [responsive]="true"
-          previousLabel="Prev" nextLabel="Next">
+      <pagination-controls class="my-pagination" (pageChange)="getPag((page = $event))" [responsive]="true"
+        previousLabel="Prev" nextLabel="Next">
       </pagination-controls>
     </div>
 

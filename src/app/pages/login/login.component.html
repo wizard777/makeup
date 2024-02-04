@@ -30,8 +30,9 @@
             </div>
         </div>
         <div class="text-center">
-            <input value="Submit" type="submit" [disabled]=!userLogin.valid>
-            <input value="Reset" type="button" (click)="onReset()">
+            <input value="Submit" type="submit" [disabled]= "!userLogin.valid">
+            <input value="Reset" type="button" [disabled] = "!userLogin.dirty"
+            (click)="onReset()">
         </div>
     </form>
 
@@ -43,5 +44,7 @@
         <div>userLogin.valid = <span>{{userLogin.valid }}</span> </div>
         <div>userLogin.invalid= <span>{{userLogin.invalid }}</span> </div>
         <div>userFLogin.status = <span>{{userLogin.status }}</span> </div>
+        <div>userFLogin.touched = <span>{{userLogin.touched }}</span> </div>
+        <div>userFLogin.dirty = <span>{{userLogin.dirty }}</span> </div>
     </div>
 </div>

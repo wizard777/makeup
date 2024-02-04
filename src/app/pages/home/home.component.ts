@@ -1,4 +1,4 @@
-import {  Component, DoCheck, HostListener, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {  Component, HostListener, OnChanges, OnInit } from '@angular/core';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 

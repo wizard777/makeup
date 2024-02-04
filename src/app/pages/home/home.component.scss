@@ -3,136 +3,153 @@
 /*Navbar Responsive Styles in progress */
 
 .containerNav {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 
   nav {
-    .navTop {
-      margin: 30px auto 25px 100px;
-      h2 a {
-        text-decoration: underline;
-        color: #686666;
-      }
+
+    .active {
+      text-decoration: underline;
     }
 
-    .navbar {
+    a>header {
+      width: 80%;
       margin: 0 auto;
-      margin-top: 30px;
-      margin-bottom: 20px;
-      width: 85%;
+      text-decoration: underline;
+      color: #686666;
+      padding: 20px 0;
+    }
+
+    ul {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      //  position: fixed; /* Make it stick/fixed */
+      //top: 0; /* Stay on top */
+      /* Full width */
       transition: top 0.3s;
-      justify-content: flex-start;
-      a:first-child {
-        margin-left: 50px;
-      }
 
-      a {
-        margin-right: 25px;
-        font-size: 16px;
-        color: black;
-        text-decoration: none;
-      }
+      li {
+        list-style-type: none;
+        flex-grow: 1;
 
-      .login {
-        position: absolute;
-        right: 0;
+        // Register/ Login ul
+        &:nth-of-type(6) {
+          flex-grow: 4;
+          position: relative;
+          padding-right: 20px;
+          text-align: right;
+        }
+
+        // Register/ Login  a
+        &:nth-child(6) a {
+          font-size: 10px;
+          color: #686666;
+        }
+
         a {
-          font-size: 12px;
-          color: #5b5959;
-          text-decoration: underline;
+          color: #686666;
+          font-size: 14px;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
-
-    .navbar a:hover,
-    .nav a:hover {
-      text-decoration: underline;
-    }
-
-    .nav a:hover:nth-child(4) {
-      text-decoration: none;
-    }
-
-    .navbar .active,
-    .nav .active {
-      text-decoration: underline;
-    }
   }
 
-  .nav {
-    height: 100px;
-    border-bottom: solid 0.2px rgb(137, 134, 134);
-    padding-top: 30px;
-    width: 80%;
-    display: flex;
+  .hr {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  div>hr {
+    margin: 1rem 0;
+    // border: none;
+     height: 0.3px;
+    /* Set the hr color */
+    color: #575656;
+    background-color: #575656;
+  }
+
+  .navbarScroll {
+    // border: solid 1px black;
+    width: 90%;
+    margin: 0 auto;
     position: fixed;
     z-index: 1;
     background-color: white;
     top: 0;
     transition: top 0.5s;
+
     /* Transition effect when sliding down (and up) */
-    margin: 0 auto;
-    h2 a:first-of-type {
-      text-decoration: underline;
-      font-size: 25px;
-      font-weight: bold;
-      color: #686666;
-      margin-left: 30px;
-    }
+    ul {
+      width: 80%;
+      height: 100px;
+      //border: solid 2px rgb(243, 10, 10);
+      display: flex;
 
-    a {
-      color: black;
-      font-size: 14px;
-      justify-content: flex-start;
-      margin-right: 25px;
-      text-decoration: none;
-    }
-
-    .navInput {
-      position: absolute;
-      left: 45%;
-
-      p {
-        margin-top: 10px;
-        font-size: 14px;
-        text-align: center;
+      .active {
+        @extend .active
       }
 
       input {
+        outline: none;
         width: 140px;
         border: none;
+        flex-grow: 0;
         border-bottom: solid 1px red;
-        padding-left: 10px;
-        font-size: 14px;
-        outline: none;
+
+        &:focus {
+          //  border: none;
+        }
+      }
+
+      li {
+        // border: solid 1px black;
+        list-style-type: none;
+        flex-grow: 1;
+
+        // Register/login ul
+        &:nth-child(6) {
+          flex-grow: 5;
+          position: relative;
+          text-align: right;
+          padding-right: 20px;
+        }
+
+        // Li name NEwS
+        &:nth-child(4) {
+          padding-top: 50px;
+        }
+
+        // Register/login a
+        &:nth-child(6) a {
+          font-size: 10px;
+        }
+
+        // Makeup logo 
+        &:first-child a {
+          // border: solid 1px black;
+          font-size: 28px;
+          text-decoration: underline;
+          font-weight: bold;
+          color: #686666;
+        }
+
+        a {
+          text-decoration: none;
+          color: #686666;
+          font-size: 14px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
     }
-
-    .login {
-      position: absolute;
-      right: 0;
-      text-align: left;
-
-      a {
-        // margin-right: 80px;
-        font-size: 12px;
-        color: #7b7979;
-        text-decoration: underline;
-      }
-
-      p {
-        font-size: 14px;
-        padding-top: 15px;
-      }
-    }
-  }
-
-  hr {
-    border: none;
-    height: 0.3px;
-    /* Set the hr color */
-    color: #575656;
-    background-color: #575656;
   }
 }
 
@@ -189,10 +206,6 @@ section {
       outline: none;
     }
   }
-
-
-
-
 
   /* Responsive Styles */
   @media screen and (max-width: 767px) {

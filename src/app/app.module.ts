@@ -20,7 +20,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AutoFocusDirective } from './directive/auto-focus.directive';
 import { CheckNetworkStatusComponent } from './components/check-network-status/check-network-status.component';
 import { ProgressComponent } from './components/progress/progress.component';
-import { Navbar1Component } from './components/navbar1/navbar1.component';
+import { NavbarHomeComponent } from './components/navbarHome/navbarHome.component';
 import { VerticalComponent } from './components/vertical/vertical.component';
 import { LoginComponent } from './pages/login/login.component';
 
@@ -42,7 +42,7 @@ import { LoginComponent } from './pages/login/login.component';
        AutoFocusDirective,
        CheckNetworkStatusComponent,
        ProgressComponent,
-       Navbar1Component,
+       NavbarHomeComponent,
        VerticalComponent,
        LoginComponent
        
