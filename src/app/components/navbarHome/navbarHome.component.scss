@@ -1,0 +1,70 @@
+.containerNav {
+  width: 80%;
+  margin: 0 auto;
+
+  nav {
+    //border: solid 3px rgb(227, 25, 25);
+
+    a>header {
+      width: 80%;
+      margin: 0 auto;
+      //border: solid 3px rgb(30, 91, 22);
+      text-decoration: underline;
+      color: #686666;
+      padding: 20px 0;
+    }
+
+    ul {
+      // border: solid 1px black;
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+      //top: 0; /* Stay on top */
+      width: 80%;
+      /* Full width */
+      transition: top 0.3s;
+      /* Transition effect when sliding down (and up) */
+
+      li {
+        list-style-type: none;
+        flex-grow: 1;
+
+        &:nth-of-type(6) {
+          //  border: solid 1px black;
+          flex-grow: 2;
+          position: relative;
+          padding-right: 20px;
+          text-align: right;
+        }
+
+        &:nth-child(6) a {
+          font-size: 12px;
+        }
+
+        a {
+          color: #686666;
+          font-size: 14px;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  /* Style the navbar links */
+  .hr {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  div>hr {
+    margin: 1rem 0;
+    // border: none;
+     height: 0.3px;
+    /* Set the hr color */
+    color: #575656;
+    background-color: #575656;
+  }
+}
