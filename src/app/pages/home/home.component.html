@@ -1,12 +1,6 @@
 <div class="containerNav">
   <nav>
-    <!-- <div class="navTop">
-       <h2>
-        <a [routerLink]="['/']">
-          <header>MakeUp</header>
-        </a>
-      </h2>
-    </div>  -->
+ 
     <div>
       <h2><a [routerLink]="['/']">
           <header>MakeUp</header>
@@ -50,16 +44,9 @@
 
 <section>
   <div class="content">
-    <!-- items found -->
-    <!-- Pagination top -->
-    <div *ngIf="!isLoading && !errorMessage && filterLength ">
-      <pagination-controls class="my-pagination" (pageChange)="getPag((page = $event))" [responsive]="true"
-        previousLabel="Prev" nextLabel="Next">
-      </pagination-controls>
-    </div>
-    <!-- Makeup filters -->
-    <div *ngIf="!isLoading && !errorMessage" class="makeup-filters">
-      <div class="search-filter">
+     <!-- Makeup filters -->
+     <div *ngIf="!isLoading && !errorMessage" class="makeup-filters1">
+      <div >
         <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
       </div>
       <!-- <app-optional-filter
@@ -73,6 +60,30 @@
 
       </div>
     </div>
+    <!-- items found -->
+    <!-- Pagination top -->
+    <div *ngIf="!isLoading && !errorMessage && filterLength ">
+      <pagination-controls class="my-pagination" (pageChange)="getPag((page = $event))" [responsive]="true"
+        previousLabel="Prev" nextLabel="Next">
+      </pagination-controls>
+    </div>
+
+    <!-- Makeup filters -->
+    <!-- <div *ngIf="!isLoading && !errorMessage" class="makeup-filters">
+      <div class="search-filter">
+        <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
+      </div>
+      <app-optional-filter
+        placeholder="Filter by category"
+        [options]="categoryOptions"
+        [(value)]="categoryFilter">
+      </app-optional-filter>
+       <div class="itemsFound">
+        <p *ngIf="makeupData">
+           <b>{{ filterLength}}</b> items found</p>
+      </div> 
+    </div> -->
+
     <!-- Loader -->
     <app-spinner *ngIf="isLoading"></app-spinner>
     <!-- <app-progress *ngIf="isLoading"></app-progress> -->

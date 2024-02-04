@@ -68,7 +68,7 @@
   div>hr {
     margin: 1rem 0;
     // border: none;
-     height: 0.3px;
+    height: 0.3px;
     /* Set the hr color */
     color: #575656;
     background-color: #575656;
@@ -100,7 +100,8 @@
         width: 140px;
         border: none;
         flex-grow: 0;
-        border-bottom: solid 1px red;
+        border-bottom: solid 1px #686666;
+        ;
 
         &:focus {
           //  border: none;
@@ -135,7 +136,6 @@
           // border: solid 1px black;
           font-size: 28px;
           text-decoration: underline;
-          font-weight: bold;
           color: #686666;
         }
 
@@ -168,7 +168,7 @@ section {
 
   .content {
     display: flex;
-    margin: 40px auto 32px;
+    margin: 30px auto 32px;
     padding: 16px;
     max-width: 960px;
     flex-direction: column;
@@ -186,6 +186,47 @@ section {
     padding-top: 30px;
   }
 
+  // new css imput search
+  .makeup-filters1 {
+    margin-bottom: 40px;
+
+    input {
+      width: 180px;
+      border: none;
+      border-bottom: solid 1px #686666;
+      outline: none;
+
+      &[type="text"]::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: $placeholder-color;
+        font-size: $placeholder-font_size;
+
+      }
+
+      &[type="text"]::-moz-placeholder {
+        /* Firefox 19+ */
+        color: $placeholder-color;
+        font-size: $placeholder-font_size;
+
+      }
+
+      &[type="text"]:-ms-input-placeholder {
+        /* IE 10+ */
+        color: $placeholder-color;
+        font-size: $placeholder-font_size;
+
+      }
+
+      &[type="text"]:-moz-placeholder {
+        /* Firefox 18- */
+        color: $placeholder-color;
+
+      }
+    }
+  }
+
+
+
   .makeup-filters {
     width: 90%;
     //width: 300px;
@@ -197,7 +238,6 @@ section {
     .search-filter {}
 
     input {
-
       width: 140px;
       border: none;
       border-bottom: solid 1px red;
