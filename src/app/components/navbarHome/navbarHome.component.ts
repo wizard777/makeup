@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-navbarHome',
   templateUrl: './navbarHome.component.html',

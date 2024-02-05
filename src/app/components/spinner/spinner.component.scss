@@ -1,3 +1,23 @@
 p {
+    width: 200px;
+    text-align: center;
     font-size: 18px;
+    margin-bottom: 30px;
+}
+
+div {
+    height: 5px;
+    width: 200px;
+    background-image: conic-gradient(red 50deg, yellow 100deg, lime 200deg, aqua, blue, magenta, red);
+    animation: progress 6s linear 2;
+}
+
+@keyframes progress {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 200px;
+    }
 }
