@@ -2,12 +2,27 @@
   width: 85%;
   margin: 0 auto;
 
+  .active {
+    text-decoration: underline solid #686666 0.5px;;
+  }
+
+
+  &:nth-child(1) h2 a {
+    @extend .active;
+
+    &:hover {
+      @extend .active;
+
+    }
+  }
+
   nav {
 
+   
     a>header {
       width: 80%;
       margin: 0 auto;
-      text-decoration: underline;
+      @extend .active;
       color: #686666;
       padding: 20px 0;
     }
@@ -34,7 +49,7 @@
         }
 
         &:nth-child(6) a {
-          font-size: 10px;
+          font-size: 12px;
         }
 
         a {
@@ -42,7 +57,7 @@
           font-size: 14px;
 
           &:hover {
-            text-decoration: underline;
+            @extend .active
           }
         }
       }

@@ -1,7 +1,6 @@
 
-
 import { Component, Input, OnInit } from '@angular/core';
-import {  map, tap} from 'rxjs/operators';
+import {  map, shareReplay} from 'rxjs/operators';
 import { IMakeup } from 'src/app/interface/i-makeup';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -12,7 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class FooterComponent implements OnInit {
 
-  makeupData: string[];
+  makeupData: any[];
 
   constructor(private _api: ApiService) { }
 
@@ -23,13 +22,16 @@ export class FooterComponent implements OnInit {
   getTag() {
     this._api.getMakeup()
       .pipe(
-        map(response => { return response.map(item => (item.tag_list)) }),
-      //  tap(el => console.log(el)),
+       map(response => { return response.map(item => (item.tag_list)
+             
+          ) 
+          
+        }),
+     
         map(res => Array.from(new Set([].concat(...res)))),
+       // shareReplay(1)
       )
-      .subscribe(res => {
-        this.makeupData = res;
-      }
+      .subscribe(res => { this.makeupData = res }
       )
   }
 }

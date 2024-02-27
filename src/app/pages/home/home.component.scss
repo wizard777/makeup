@@ -6,16 +6,28 @@
   width: 90%;
   margin: 0 auto;
 
+  .active {
+    text-decoration: underline solid #686666 0.5px;
+    
+  }
+
+  &:nth-child(1)h2   a {
+    @extend .active;
+
+    &:hover {
+      @extend .active;
+
+    }
+  }
+
   nav {
 
-    .active {
-      text-decoration: underline;
-    }
+   
 
     a>header {
       width: 80%;
       margin: 0 auto;
-      text-decoration: underline;
+      //text-decoration: underline solid #686666 0.5px;
       color: #686666;
       padding: 20px 0;
     }
@@ -44,7 +56,7 @@
 
         // Register/ Login  a
         &:nth-child(6) a {
-          font-size: 10px;
+          font-size: 12px;
           color: #686666;
         }
 
@@ -53,7 +65,7 @@
           font-size: 14px;
 
           &:hover {
-            text-decoration: underline;
+            @extend .active
           }
         }
       }
@@ -87,7 +99,7 @@
     /* Transition effect when sliding down (and up) */
     ul {
       width: 80%;
-      height: 100px;
+      height: 80px;
       //border: solid 2px rgb(243, 10, 10);
       display: flex;
 
@@ -101,7 +113,6 @@
         border: none;
         flex-grow: 0;
         border-bottom: solid 1px #686666;
-        ;
 
         &:focus {
           //  border: none;
@@ -124,19 +135,22 @@
         // Li name NEwS
         &:nth-child(4) {
           padding-top: 50px;
+          font-size: 14px;
         }
 
         // Register/login a
         &:nth-child(6) a {
-          font-size: 10px;
+          font-size: 12px;
         }
 
         // Makeup logo 
         &:first-child a {
           // border: solid 1px black;
-          font-size: 28px;
-          text-decoration: underline;
+          font-size: 30px;
+          // font-weight: 500;
+
           color: #686666;
+          @extend .active;
         }
 
         a {
@@ -145,7 +159,7 @@
           font-size: 14px;
 
           &:hover {
-            text-decoration: underline;
+            @extend .active
           }
         }
       }
@@ -156,6 +170,7 @@
 // End Navbar
 
 //itemsFound
+
 .itemsFound {
   font-size: 14px;
 }
@@ -196,11 +211,11 @@ section {
       border-bottom: solid 1px #686666;
       outline: none;
 
+
       &[type="text"]::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
         color: $placeholder-color;
         font-size: $placeholder-font_size;
-
       }
 
       &[type="text"]::-moz-placeholder {

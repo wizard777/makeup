@@ -1,10 +1,8 @@
 <div class="containerNav">
   <nav>
  
-    <div>
-      <h2><a [routerLink]="['/']">
-          <header>MakeUp</header>
-        </a></h2>
+    <div >
+      <h2><a [routerLink]="['/']"><header >MakeUp</header></a></h2>
     </div>
     <div>
       <ul>
@@ -23,11 +21,11 @@
       <div class="navbarScroll">
         <ul>
           <li><a [routerLink]="['/']">
-              <header>MakeUp</header>
+              MakeUp
             </a></li>
           <li><a [routerLink]="'/home'" [routerLinkActive]="['active']">Products</a></li>
           <li><a [routerLinkActive]="['active']" [routerLinkActive]="['active']">About</a></li>
-          <li><a>News<app-vertical></app-vertical></a></li>
+          <li>News<app-vertical></app-vertical></li>
           <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
           <li><a [routerLink]="['/login']" [routerLinkActive]="['active']">Register&nbsp;/&nbsp;Login</a></li>
         </ul>
@@ -49,14 +47,10 @@
       <div >
         <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
       </div>
-      <!-- <app-optional-filter
-        placeholder="Filter by category"
-        [options]="categoryOptions"
-        [(value)]="categoryFilter">
-      </app-optional-filter> -->
+     
       <div class="itemsFound">
         <p *ngIf="makeupData">
-          <!-- <b>{{ filterLength}}</b> items found</p> -->
+        
 
       </div>
     </div>
@@ -68,25 +62,11 @@
       </pagination-controls>
     </div>
 
-    <!-- Makeup filters -->
-    <!-- <div *ngIf="!isLoading && !errorMessage" class="makeup-filters">
-      <div class="search-filter">
-        <input appAutoFocus type="text" placeholder="Search for a name..." [(ngModel)]="search" />
-      </div>
-      <app-optional-filter
-        placeholder="Filter by category"
-        [options]="categoryOptions"
-        [(value)]="categoryFilter">
-      </app-optional-filter>
-       <div class="itemsFound">
-        <p *ngIf="makeupData">
-           <b>{{ filterLength}}</b> items found</p>
-      </div> 
-    </div> -->
-
+  
+   
     <!-- Loader -->
     <app-spinner *ngIf="isLoading"></app-spinner>
-    <!-- <app-progress *ngIf="isLoading"></app-progress> -->
+   
     <!-- Error Message -->
     <div *ngIf="errorMessage" class="errorMessage">
       <strong>Warning!</strong> {{ errorMessage | json }}

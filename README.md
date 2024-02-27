@@ -11,6 +11,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 ## LinkActive
-Makeup,Products, Register / Login
+Makeup, Products, Register / Login
 ## Free API
 931 products

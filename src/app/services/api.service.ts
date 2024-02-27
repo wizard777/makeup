@@ -27,7 +27,7 @@ export class ApiService {
           //item.filter((item1) => item1.id < 300)
             item.sort((a: IMakeup, b: IMakeup) =>
               (a.id > b.id) ? 1
-                : a.id === b.id ? (a.brand > b.brand ? 1 : -1)
+              //  : a.id === b.id ? (a.brand > b.brand ? 1 : -1)
                   : -1
             ),
         )
